@@ -14,10 +14,11 @@ public class MotelRoom {
             return new Deluxe(Amenities);  
         }   
       else if(room.equalsIgnoreCase("Suite")) {  
-            return new Suite();  
+            return new Suite(Amenities);  
       }  
   return null;  
 }  
+
     public void setDoNotDisturb() {
     }
 }
