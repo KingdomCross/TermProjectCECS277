@@ -33,6 +33,7 @@ public class RoachMotel {
     public static RoachMotel getInstance() {
     	if(singleMotel == null) {
     		singleMotel = new RoachMotel();
+    		singleMotel.createRooms();
     	}
     	return singleMotel;
     }
@@ -47,12 +48,13 @@ public class RoachMotel {
     public static RoachMotel getInstance(int numRooms) {
     	if(singleMotel == null) {
     		singleMotel = new RoachMotel(numRooms);
+    		singleMotel.createRooms();
     	}
     	return singleMotel;
     }
     
     /**
-     * Instantiates each MotelRoom so that they can be accessed.
+     * Instantiates each MotelRoom to a vacant room so that they can be accessed.
      */
     public void createRooms() {
     	for(int index = 0; index < rooms.length; index++) {
