@@ -7,20 +7,20 @@ import java.util.ArrayList;
  */
 public class RoomBuilder {
 	public MotelRoom getPlan(RoachColony rc, String room, ArrayList<String> amenities ){  
-		if(room == null) return null;  
-		else if(room.equalsIgnoreCase("Regular")) {
-			if (amenities == null) return new Regular();
+		MotelRoom newRoom = null;
+		if(room.equalsIgnoreCase("Regular")) {
+			newRoom = amenities == null ? new Regular() : placeAmenities(amenities, new Regular());
 		}
 		else if(room.equalsIgnoreCase("Deluxe")) {
-			if(amenities == null) return new Deluxe();
+			newRoom = amenities == null ? new Deluxe() : placeAmenities(amenities, new Deluxe());
 		}
 		else if(room.equalsIgnoreCase("Suite")) {
-			if(amenities == null) return new Suite(); 
+			newRoom = amenities == null ? new Suite() : placeAmenities(amenities, new Suite());
 		}
 		return new Regular();  
 	}
 	
-	public MotelRoom placeAmenities(ArrayList<String> amenities, MotelRoom base) {
+	private MotelRoom placeAmenities(ArrayList<String> amenities, MotelRoom base) {
 		if(amenities.size() == 0) return base;
 		else {
 			MotelRoom newRoom;

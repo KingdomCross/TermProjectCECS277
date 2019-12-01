@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public class RoachMotel {
 	private static RoachMotel singleMotel;
-	private MotelRoom roomGetter;
+	private RoomBuilder builder;
 	private MotelRoom[] rooms;
 	//private Maid[] maids;
 	
@@ -22,6 +22,12 @@ public class RoachMotel {
 		//maids = new Maid[numMaids];
 	}
 	
+    /**
+     * Returns the Singleton instance of the RoachMotel.
+     * If the instance is not yet instantiated, constructs a new RoachMotel using its default constructor.
+     * Otherwise, returns the instance.
+     * @return the single instance of the RoachMotel
+     */
     public static RoachMotel getInstance() {
     	if(singleMotel == null) {
     		singleMotel = new RoachMotel();
@@ -29,6 +35,13 @@ public class RoachMotel {
     	return singleMotel;
     }
     
+    /**
+     * Returns the Singleton instance of the RoachMotel.
+     * If the instance is not yet instantiated, constructs a new RoachMotel with this method's argument.
+     * Otherwise, returns the instance.
+     * @param numRooms number of rooms to instantiate the RoachMotel with if the instance has not yet been created
+     * @return the single instance of the RoachMotel
+     */
     public static RoachMotel getInstance(int numRooms) {
     	if(singleMotel == null) {
     		singleMotel = new RoachMotel(numRooms);
@@ -36,9 +49,12 @@ public class RoachMotel {
     	return singleMotel;
     }
     
+    /**
+     * Instantiates each MotelRoom so that they can be accessed.
+     */
     public void createRooms() {
     	for(int index = 0; index < rooms.length; index++) {
-    		rooms[index] = new MotelRoom();
+    		rooms[index] = new Regular();
     	}
     }
 
