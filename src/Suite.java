@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 
 public class Suite extends MotelRoom {
-	public int price = 100;
-	public Suite()
-	{
+	public Suite(){
+		this.price = 100;
 		System.out.println("Suite Room Created");
 	}
 	

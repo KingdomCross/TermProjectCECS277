@@ -7,6 +7,7 @@ import java.util.ArrayList;
  *
  */
 public abstract class MotelRoom {
+	protected int price;
 	private boolean doNotDisturb = false; 
     public void setDoNotDisturb(boolean dn) {
     	this.doNotDisturb = dn;

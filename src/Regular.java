@@ -1,9 +1,8 @@
 import java.util.ArrayList;
 
 public class Regular extends MotelRoom {
-	public int price = 50;
-	
 	public Regular() {
+		this.price = 50;
 		System.out.println("Regular Room Created");
 	}
 	
@@ -14,5 +13,9 @@ public class Regular extends MotelRoom {
 	public static void main(String[] args) {
 		Regular room = new Regular();
 		room.update();
+	}
+	
+	public String toString() {
+		return "";
 	}
 }
