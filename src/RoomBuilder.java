@@ -15,7 +15,7 @@ public class RoomBuilder {
 	 * @return
 	 */
 	public MotelRoom buildRoom(RoachColony rc, String room, ArrayList<String> amenities ){  
-		MotelRoom newRoom = null;
+		MotelRoom newRoom = new Regular();
 		if(room.equalsIgnoreCase("Regular")) {
 			newRoom = amenities == null ? new Regular() : placeAmenities(amenities, new Regular());
 		}

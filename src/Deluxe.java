@@ -3,6 +3,17 @@ import java.util.ArrayList;
 public class Deluxe extends BaseRoom {
 	public Deluxe(){
 		this.price = 75;
+		this.resident = new RoachColony();
+		this.doNotDisturb = false;
+		this.vacancy = true;
+		System.out.println("Vacant Deluxe Room Created");
+	}
+	
+	public Deluxe(RoachColony resi) {
+		this.price = 50;
+		this.resident = resi;
+		this.doNotDisturb = false;
+		this.vacancy = true;
 		System.out.println("Deluxe Room Created");
 	}
 

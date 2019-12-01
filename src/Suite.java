@@ -2,8 +2,19 @@ import java.util.ArrayList;
 
 public class Suite extends BaseRoom {
 	public Suite(){
-		this.price = 100;
-		System.out.println("Suite Room Created");
+		this.price = 75;
+		this.resident = new RoachColony();
+		this.doNotDisturb = false;
+		this.vacancy = true;
+		System.out.println("Vacant Suite Created");
+	}
+	
+	public Suite(RoachColony resi) {
+		this.price = 50;
+		this.resident = resi;
+		this.doNotDisturb = false;
+		this.vacancy = true;
+		System.out.println("Suite Created");
 	}
 	@Override
 	public void visit() {

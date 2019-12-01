@@ -1,24 +1,18 @@
-import java.util.ArrayList;
-
 public class Regular extends BaseRoom {
 	public Regular() {
 		this.price = 50;
-		System.out.println("Regular Room Created");
+		this.resident = new RoachColony();
+		this.doNotDisturb = false;
+		this.vacancy = true;
+		System.out.println("Vacant Regular Room created.");
 	}
 	
-	public void update() {
-		System.out.println("Regular room updated.");
-	}
-	
-	public static void main(String[] args) {
-		Regular room = new Regular();
-		room.update();
-	}
-	
-	
-	
-	public String toString() {
-		return "";
+	public Regular(RoachColony resi) {
+		this.price = 50;
+		this.resident = resi;
+		this.doNotDisturb = false;
+		this.vacancy = false;
+		System.out.println("Regular Room created.");
 	}
 
 	@Override

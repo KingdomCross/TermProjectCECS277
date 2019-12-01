@@ -10,6 +10,7 @@ public abstract class BaseRoom implements MotelRoom{
 	protected RoachColony resident;
 	protected int price;
 	protected boolean doNotDisturb;
+	protected boolean vacancy;
 	
 	public abstract void visit();
 	public boolean isDisturbable() {
@@ -25,6 +26,6 @@ public abstract class BaseRoom implements MotelRoom{
 		return this.resident;
 	}
 	public boolean isVacant() {
-		return this.resident == null;
+		return this.vacancy;
 	}
 }
