@@ -5,8 +5,8 @@
  *
  */
 public abstract class Amenity extends MotelRoom {
-	private MotelRoom base;
-	private String amenityName;
+	protected MotelRoom base;
+	protected String amenityName;
 	public void setDoNotDisturb(boolean dn) {
 		base.setDoNotDisturb(dn);
 	}
