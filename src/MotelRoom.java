@@ -1,24 +1,18 @@
 import java.util.ArrayList;
 
-public class MotelRoom {
-	//private boolean DoNotDisturb = false;
-    public MotelRoom getPlan(RoachColony rc, String room, ArrayList Amenities ){  
-   
-        if(room == null){  
-         return null;  
-        }  
-      if(room.equalsIgnoreCase("Regular")) {  
-             return new Regular(Amenities);  
-           }   
-       else if(room.equalsIgnoreCase("Deluxe")){  
-            return new Deluxe(Amenities);  
-        }   
-      else if(room.equalsIgnoreCase("Suite")) {  
-            return new Suite(Amenities);  
-      }  
-  return null;  
-}  
-
-    public void setDoNotDisturb() {
+/**
+ * Superclass for motel rooms.
+ * Acts as an interface that also requires classes to inherit a boolean doNotDisturb.
+ * @author ???
+ *
+ */
+public abstract class MotelRoom {
+	private boolean doNotDisturb = false; 
+    public void setDoNotDisturb(boolean dn) {
+    	this.doNotDisturb = dn;
     }
+    public boolean getDoNotDisturb() {
+    	return this.doNotDisturb;
+    }
+    public abstract void update();
 }
