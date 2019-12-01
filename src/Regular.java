@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 
-public class Regular extends MotelRoom {
-	//maybe use the default-constructed Regular as a vacant room?
+public class Regular extends BaseRoom {
 	public Regular() {
 		this.price = 50;
 		System.out.println("Regular Room Created");
@@ -20,5 +19,11 @@ public class Regular extends MotelRoom {
 	
 	public String toString() {
 		return "";
+	}
+
+	@Override
+	public void visit() {
+		if(isDisturbable()) System.out.println("Regular room:\nLinens have been changed.\nTowels on the floor have been replaced.");
+		else System.out.println("Regular room:\n\"Do Not Disturb\" sign has been set. Will not clean.");
 	}
 }

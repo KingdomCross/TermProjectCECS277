@@ -4,13 +4,23 @@
  * @author Alexander Dung
  *
  */
-public abstract class Amenity extends MotelRoom {
+public abstract class Amenity implements MotelRoom{
 	protected MotelRoom base;
-	protected String amenityName;
-	public void setDoNotDisturb(boolean dn) {
-		base.setDoNotDisturb(dn);
+	protected int price;
+	public abstract void visit();
+	public boolean isDisturbable() {
+		return this.base.isDisturbable();
 	}
-	public boolean getDoNotDisturb() {
-		return base.getDoNotDisturb();
+	public void setDisturbable(boolean dist) {
+		this.base.setDisturbable(dist);
+	}
+	public int getPrice() {
+		return this.price + base.getPrice();
+	}
+	public RoachColony getResident() {
+		return this.base.getResident();
+	}
+	public boolean isVacant() {
+		return this.base.isVacant();
 	}
 }

@@ -11,19 +11,17 @@ public class RoachMotel {
 	private ArrayList<RoachColony> waitList;
 	private RoomBuilder builder;
 	private MotelRoom[] rooms;
-	//private Maid[] maids;
 	
 	private RoachMotel() {
 		waitList = new ArrayList<>();
 		builder = new RoomBuilder();
-		rooms = new MotelRoom[10];
+		rooms = new BaseRoom[10];
 	}
 	
 	private RoachMotel(int numRooms) {
 		waitList = new ArrayList<>();
 		builder = new RoomBuilder();
-		rooms = new MotelRoom[numRooms];
-		//maids = new Maid[numMaids];
+		rooms = new BaseRoom[numRooms];
 	}
 	
     /**
@@ -63,14 +61,38 @@ public class RoachMotel {
     }
 
     public MotelRoom checkIn(RoachColony colony, String roomType, ArrayList<String> amenities) {
+    	for(int index = 0; index < rooms.length; index++) {
+    		if(rooms[index].isVacant()) {
+    			MotelRoom newRoom = builder.buildRoom(colony, roomType, amenities);
+    			rooms[index] = newRoom;
+    			return newRoom;
+    		}
+    		else {
+    			waitList.add(colony);
+    			return null;
+    		}
+    	}
     	return builder.buildRoom(colony, roomType, amenities);
     }
 
-    public Double checkOut(MotelRoom r2, int i, String masterRoach) {
-        return null;
+    /**
+     * Calculates the price of the argument room's visit and charges the appropriate account based on the argument String.
+     * @param room
+     * @param days
+     * @param masterRoach
+     * @return
+     */
+    public double checkOut(MotelRoom room, int days, String pay) {
+        //must figure out how to determine index of room. maybe assign a private int to save the room's index?
+    	return room.getPrice() * days;
     }
 
+    /**
+     * Iterates through each room of the RoachMotel and attempts to clean them.
+     */
     public void cleanRooms() {
-    	
+    	for(int index = 0; index < rooms.length; index++) {
+    		rooms[index].visit();
+    	}
     }
 }
