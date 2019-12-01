@@ -1,14 +1,16 @@
 public class Suite extends BaseRoom {
 	public Suite(){
 		this.price = 75;
+		this.roomNumber = -1;
 		this.resident = new RoachColony();
 		this.doNotDisturb = false;
 		this.vacancy = true;
 		System.out.println("Vacant Suite Created");
 	}
 	
-	public Suite(RoachColony resi) {
+	public Suite(RoachColony resi, int num) {
 		this.price = 50;
+		this.roomNumber = num;
 		this.resident = resi;
 		this.doNotDisturb = false;
 		this.vacancy = true;

@@ -8,8 +8,7 @@ import java.util.ArrayList;
  */
 public abstract class BaseRoom implements MotelRoom{
 	protected RoachColony resident;
-	protected int price;
-	protected int days;
+	protected int price, roomNumber;
 	protected boolean doNotDisturb;
 	protected boolean vacancy;
 	
@@ -36,16 +35,14 @@ public abstract class BaseRoom implements MotelRoom{
 	}
 	
 	public void passDay() {
-		this.days++;
 		resident.party(false);
 	}
 	
 	public void passDay(boolean hasShower) {
-		this.days++;
 		resident.party(hasShower);
 	}
 	
-	public int getDays() {
-		return this.days;
+	public int getRoomNumber() {
+		return this.roomNumber;
 	}
 }

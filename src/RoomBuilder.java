@@ -14,18 +14,22 @@ public class RoomBuilder {
 	 * @param amenities
 	 * @return
 	 */
-	public MotelRoom buildRoom(RoachColony rc, String room, ArrayList<String> amenities ){  
+	public MotelRoom buildRoom(RoachColony rc, String room, ArrayList<String> amenities, int roomNumber){  
 		MotelRoom newRoom = new Regular();
 		if(room.equalsIgnoreCase("Regular")) {
-			newRoom = amenities == null ? new Regular() : placeAmenities(amenities, new Regular());
+			newRoom = amenities == null ? new Regular() : placeAmenities(amenities, new Regular(rc, roomNumber));
 		}
 		else if(room.equalsIgnoreCase("Deluxe")) {
-			newRoom = amenities == null ? new Deluxe() : placeAmenities(amenities, new Deluxe());
+			newRoom = amenities == null ? new Deluxe() : placeAmenities(amenities, new Deluxe(rc, roomNumber));
 		}
 		else if(room.equalsIgnoreCase("Suite")) {
-			newRoom = amenities == null ? new Suite() : placeAmenities(amenities, new Suite());
+			newRoom = amenities == null ? new Suite() : placeAmenities(amenities, new Suite(rc, roomNumber));
 		}
 		return newRoom;  
+	}
+	
+	public MotelRoom buildVacantRoom() {
+		return new Regular();
 	}
 	
 	private MotelRoom placeAmenities(ArrayList<String> amenities, MotelRoom base) {

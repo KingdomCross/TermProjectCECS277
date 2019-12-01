@@ -7,5 +7,5 @@ public interface MotelRoom {
 	public boolean isVacant();
 	public void passDay();
 	public void passDay(boolean hasShower);
-	public int getDays();
+	public int getRoomNumber();
 }

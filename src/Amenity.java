@@ -31,14 +31,14 @@ public abstract class Amenity implements MotelRoom{
 	}
 	
 	public void passDay() {
-		base.passDay(false);
+		this.base.passDay(false);
 	}
 	
 	public void passDay(boolean hasShower) {
-		base.passDay(hasShower);
+		this.base.passDay(hasShower);
 	}
 	
-	public int getDays() {
-		return base.getDays();
+	public int getRoomNumber() {
+		return this.base.getRoomNumber();
 	}
 }

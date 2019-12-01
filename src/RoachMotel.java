@@ -2,12 +2,13 @@ import java.util.ArrayList;
 
 /**
  * Represents a Roach Motel with a certain number of rooms and maids.
- * Has methods to 
+ * 
  * @author Alexander Dung
  *
  */
 public class RoachMotel {
 	private static RoachMotel singleMotel;
+	private boolean vacancy;
 	private ArrayList<RoachColony> waitList;
 	private RoomBuilder builder;
 	private MotelRoom[] rooms;
@@ -58,23 +59,47 @@ public class RoachMotel {
      */
     public void createRooms() {
     	for(int index = 0; index < rooms.length; index++) {
-    		rooms[index] = new Regular();
+    		rooms[index] = builder.buildVacantRoom();
     	}
     }
 
+    /**
+     * If the RoachMotel is vacant, checks the argument RoachColony in to a MotelRoom indicated by the argument String, decorated with the Amenities indicated by the ArrayList of Strings.
+     * If the MotelRoom is not vacant, adds the RoachColony to a waitlist to be notified when the RoachMotel is vacant.
+     * @param colony
+     * @param roomType
+     * @param amenities
+     * @return
+     */
     public MotelRoom checkIn(RoachColony colony, String roomType, ArrayList<String> amenities) {
-    	for(int index = 0; index < rooms.length; index++) {
-    		if(rooms[index].isVacant()) {
-    			MotelRoom newRoom = builder.buildRoom(colony, roomType, amenities);
-    			rooms[index] = newRoom;
-    			return newRoom;
+    	//if the RoachMotel's vacant sign is up:
+    	if(this.vacancy) {
+    		//instantiate a dummy room
+    		MotelRoom newRoom = builder.buildVacantRoom();
+    		//go through the MotelRooms
+    		for(int index = 0; index < this.rooms.length; index++) {
+    			//if a MotelRoom is vacant:
+    			if(rooms[index].isVacant()) {
+    				//set the dummy room to the specifications
+    				newRoom = builder.buildRoom(colony, roomType, amenities, index);
+    				//set the vacant MotelRoom to the newly created MotelRoom
+    				rooms[index] = newRoom;
+    				//check if the RoachMotel is now vacant
+    				this.updateVacancy();
+    				//stop checking for vacant MotelRooms
+    				break;
+    			}
     		}
-    		else {
-    			waitList.add(colony);
-    			return null;
-    		}
+    		//return the newly created MotelRoom
+    		return newRoom;
     	}
-    	return builder.buildRoom(colony, roomType, amenities);
+    	//the RoachMotel is not vacant, therefore:
+    	else {
+    		//add the RoachColony to the waitlist
+    		waitList.add(colony);
+    		//return a dummy room
+    		return builder.buildVacantRoom();
+    	}
     }
 
     /**
@@ -85,7 +110,8 @@ public class RoachMotel {
      * @return
      */
     public double checkOut(MotelRoom room, int days, String pay) {
-        //must figure out how to determine index of room. maybe assign a private int to save the room's index?
+    	rooms[room.getRoomNumber()] = builder.buildVacantRoom();
+    	this.updateVacancy();
     	return room.getPrice() * days;
     }
 
@@ -96,5 +122,19 @@ public class RoachMotel {
     	for(int index = 0; index < rooms.length; index++) {
     		rooms[index].visit();
     	}
+    }
+    
+    public boolean isVacant() {
+    	return this.vacancy;
+    }
+    
+    private void updateVacancy() {
+    	for(int index = 0; index < rooms.length; index++) {
+    		if(rooms[index].isVacant()) {
+    			this.vacancy = true;
+    			return;
+    		}
+    	}
+    	this.vacancy = false;
     }
 }

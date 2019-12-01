@@ -17,7 +17,22 @@ public class RoachColony {
 
     public void party(boolean hasShower) {
     	this.init_pop *= this.growth;
-    	double decay = hasShower ? 0.75 : 0.5;
-    	this.init_pop *= decay;
+    	System.out.println("Colony partied and grew %" + this.growth);
+    	if(hasShower) {
+    		this.init_pop *= 0.75;
+    		System.out.println("Colony has a shower, and population therefore decreased by 25%.");
+    	}
+    	else {
+    		this.init_pop *= 0.5;
+    		System.out.println("Colony does not have a shower, and population therefore decreased by 50%.");
+    	}
+    }
+    
+    public String getName() {
+    	return this.name;
+    }
+    
+    public int getPopulation() {
+    	return this.init_pop;
     }
 }
