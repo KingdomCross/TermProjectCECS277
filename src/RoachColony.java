@@ -16,5 +16,8 @@ public class RoachColony {
     } //Customer
 
     public void party(boolean hasShower) {
+    	this.init_pop *= this.growth;
+    	double decay = hasShower ? 0.75 : 0.5;
+    	this.init_pop *= decay;
     }
 }
