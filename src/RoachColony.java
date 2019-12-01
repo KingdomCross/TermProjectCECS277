@@ -15,6 +15,6 @@ public class RoachColony {
     	this.growth = growth;
     } //Customer
 
-    public void party() {
+    public void party(boolean hasShower) {
     }
 }

@@ -5,4 +5,7 @@ public interface MotelRoom {
 	public int getPrice();
 	public RoachColony getResident();
 	public boolean isVacant();
+	public void passDay();
+	public void passDay(boolean hasShower);
+	public int getDays();
 }

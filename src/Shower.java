@@ -12,4 +12,14 @@ public class Shower extends Amenity {
 		}
 		else System.out.println("Motel room has sign set to \"Do Not Disturb\".");
 	}
+	
+	@Override
+	public void passDay() {
+		base.passDay(true);
+	}
+	
+	@Override
+	public void passDay(boolean hasShower) {
+		base.passDay(true);
+	}
 }

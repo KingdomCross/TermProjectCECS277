@@ -7,20 +7,38 @@
 public abstract class Amenity implements MotelRoom{
 	protected MotelRoom base;
 	protected int price;
+	
 	public abstract void visit();
+	
 	public boolean isDisturbable() {
 		return this.base.isDisturbable();
 	}
+	
 	public void setDisturbable(boolean dist) {
 		this.base.setDisturbable(dist);
 	}
+	
 	public int getPrice() {
 		return this.price + base.getPrice();
 	}
+	
 	public RoachColony getResident() {
 		return this.base.getResident();
 	}
+	
 	public boolean isVacant() {
 		return this.base.isVacant();
+	}
+	
+	public void passDay() {
+		base.passDay(false);
+	}
+	
+	public void passDay(boolean hasShower) {
+		base.passDay(hasShower);
+	}
+	
+	public int getDays() {
+		return base.getDays();
 	}
 }
