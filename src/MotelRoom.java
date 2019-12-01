@@ -7,14 +7,20 @@ import java.util.ArrayList;
  *
  */
 public abstract class MotelRoom {
-	protected RoachMotel motel;
+	//how to implement vacancy indicator??
+	//protected RoachMotel motel;
 	protected int price;
-	private boolean doNotDisturb = false; 
-    public void setDoNotDisturb(boolean dn) {
-    	this.doNotDisturb = dn;
-    }
-    public boolean getDoNotDisturb() {
-    	return this.doNotDisturb;
-    }
-    public abstract void update();
+	protected boolean doNotDisturb = false;
+	
+	public int getPrice() {
+		return this.price;
+	}
+	public void setDoNotDisturb(boolean dn) {
+		this.doNotDisturb = dn;
+	}
+	public boolean getDoNotDisturb() {
+		return this.doNotDisturb;
+	}
+	//public abstract boolean isVacant();
+	public abstract void update();
 }

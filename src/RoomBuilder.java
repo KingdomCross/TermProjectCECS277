@@ -6,7 +6,15 @@ import java.util.ArrayList;
  *
  */
 public class RoomBuilder {
-	public MotelRoom getPlan(RoachColony rc, String room, ArrayList<String> amenities ){  
+	/**
+	 * Builds and returns a room based on argument variables.
+	 * 
+	 * @param rc
+	 * @param room
+	 * @param amenities
+	 * @return
+	 */
+	public MotelRoom buildRoom(RoachColony rc, String room, ArrayList<String> amenities ){  
 		MotelRoom newRoom = null;
 		if(room.equalsIgnoreCase("Regular")) {
 			newRoom = amenities == null ? new Regular() : placeAmenities(amenities, new Regular());
@@ -17,14 +25,15 @@ public class RoomBuilder {
 		else if(room.equalsIgnoreCase("Suite")) {
 			newRoom = amenities == null ? new Suite() : placeAmenities(amenities, new Suite());
 		}
-		return new Regular();  
+		return newRoom;  
 	}
 	
 	private MotelRoom placeAmenities(ArrayList<String> amenities, MotelRoom base) {
 		if(amenities.size() == 0) return base;
 		else {
 			MotelRoom newRoom;
-			switch(amenities.remove(0).toLowerCase()) {
+			ArrayList<String> tempList = amenities;
+			switch(tempList.remove(0).toLowerCase()) {
 			case "foodbar":
 				newRoom = new FoodBar(base);
 				break;
@@ -39,7 +48,7 @@ public class RoomBuilder {
 				break;
 			default: newRoom = base;
 			}
-			return newRoom;
+			return placeAmenities(tempList, newRoom);
 		}
 	}
 }
