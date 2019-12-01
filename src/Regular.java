@@ -20,4 +20,8 @@ public class Regular extends BaseRoom {
 		if(isDisturbable()) System.out.println("Regular room:\nLinens have been changed.\nTowels on the floor have been replaced.");
 		else System.out.println("Regular room:\n\"Do Not Disturb\" sign has been set. Will not clean.");
 	}
+	
+	public static void main(String[] args) { //main method
+		Regular room = new Regular();
+	}
 }

@@ -4,6 +4,7 @@ public class Spa extends Amenity {
 		this.price = 20;
 		this.base = baseRoom;
 	}
+	
 	@Override
 	public void visit() {
 		if(isDisturbable()) {
