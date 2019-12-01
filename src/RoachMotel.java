@@ -8,6 +8,7 @@ import java.util.ArrayList;
  */
 public class RoachMotel {
 	private static RoachMotel singleMotel;
+	private MotelRoom roomGetter;
 	private MotelRoom[] rooms;
 	//private Maid[] maids;
 	
@@ -34,9 +35,16 @@ public class RoachMotel {
     	}
     	return singleMotel;
     }
+    
+    public void createRooms() {
+    	for(int index = 0; index < rooms.length; index++) {
+    		rooms[index] = new MotelRoom();
+    	}
+    }
 
-    public MotelRoom checkIn(RoachColony colony, String suite, ArrayList amenities) {
+    public MotelRoom checkIn(RoachColony colony, String suite, ArrayList<String> amenities) {
         
+    	return 
     }
 
     public Double checkOut(MotelRoom r2, int i, String masterRoach) {
