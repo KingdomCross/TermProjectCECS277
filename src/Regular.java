@@ -18,7 +18,9 @@ public class Regular extends MotelRoom {
 			//price += o.getPrice();
 		}
 	}
-	
+	public void update() {
+		System.out.println("Regular room updated.");
+	}
 	
 
 }

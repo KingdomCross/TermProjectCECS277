@@ -18,4 +18,8 @@ public Deluxe(ArrayList amenities) {
 		//price += o.getPrice();
 	}
 }
+public void update() {
+	System.out.println("Regular room updated.");
+}
+
 }

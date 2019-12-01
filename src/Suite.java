@@ -20,4 +20,8 @@ public class Suite extends MotelRoom {
 	{
 		
 	}
+	public void update() {
+		System.out.println("Regular room updated.");
+	}
+	
 }
