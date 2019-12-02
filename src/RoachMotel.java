@@ -132,9 +132,9 @@ public class RoachMotel {
     		rooms[index].accept(this.maid);
     	}
     }
-    public void close() {
-    	ledger.close();
-    }
+//    public void close() {
+//    	ledger.close();
+//    }
     public boolean isVacant() {
     	return this.vacancy;
     }

@@ -1,10 +1,13 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class RoachLedger {
-	private PrintWriter ledger;
 	
 	private static String toDollar(double a) {
 		String doub = Double.toString(a);
@@ -24,8 +27,8 @@ public class RoachLedger {
 	}
 	
 	public RoachLedger() {
-		try {
-			ledger = new PrintWriter("ledger.txt");
+		try (PrintWriter ledger = new PrintWriter("ledger.txt");) {
+			
 			ledger.printf("%-30s%-30s%-30s%n", "Name","Payment type","Amount");
 		} catch (FileNotFoundException e) {
 			System.out.println("Shouldn't be thrown as we are making a new file.");
@@ -34,18 +37,41 @@ public class RoachLedger {
 	}
 	
 	public void payment(Payment payment, double amount) {
-		ledger.printf("%-30s%-30s%-30s%n", payment.getName(),payment.getMethod(),toDollar(amount));
+		try (BufferedReader reader = new BufferedReader(new FileReader(new File("ledger.txt")))){
+			StringBuilder buffer = new StringBuilder();
+			String temp;
+			while( (temp = reader.readLine()) !=null) {
+				buffer.append(temp).append("\n");
+			}
+			buffer.append(String.format("%-30s%-30s%-30s%n", payment.getName(),payment.getMethod(),toDollar(amount)));
+			reader.close();
+			try (PrintWriter writer = new PrintWriter(new File("ledger.txt"))){
+				writer.write(buffer.toString());
+			}catch(Exception e) {
+				System.out.println("Error trying to rewrite the ledger");
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e1) {
+			System.out.println("Couldn't find ledger.txt in working directory");
+			e1.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Io exception when trying to parse ledger");
+			e.printStackTrace();
+		} 
+		
+
 	}
 	
-	public void close() {
-		ledger.close();
-	}
+//	public void close() {
+//		ledger.close();
+//	}
 	
 	public static void main(String args[]) {
 		System.out.println("Creating singleton...");
 		RoachMotel rm = RoachMotel.getInstance();
 		System.out.println("Attempting checkIn()...");
 		MotelRoom temp = rm.checkIn(new RoachColony("Test",100,2), "Deluxe", new ArrayList<String>());
+		MotelRoom temp2 = rm.checkIn(new RoachColony("Test2",100,2), "Deluxe", new ArrayList<String>());
 		System.out.println(rm.checkIn(new RoachColony("Test",100,2), "deluxe", new ArrayList<String>()));
 		//System.out.println("Room:\n" + temp);
 		System.out.println("Attempting passDay()...");
@@ -53,6 +79,8 @@ public class RoachLedger {
 		temp.passDay();
 		System.out.println("Attempting checkOut()...");
 		rm.checkOut(temp, 2, new RoachPal("test","email"));
-		rm.close();
+		Scanner pause = new Scanner(System.in);
+		pause.nextLine();
+		rm.checkOut(temp2, 3, new RoachPal("test2","email"));
 	}
 }
