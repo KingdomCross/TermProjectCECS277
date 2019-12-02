@@ -13,12 +13,14 @@ public class RoachMotel {
 	private RoomBuilder builder;
 	private MotelRoom[] rooms;
 	private MotelRoomVisitor maid;
+	private RoachLedger ledger;
 	
 	private RoachMotel() {
 		this.waitList = new ArrayList<>();
 		this.builder = new RoomBuilder();
 		this.rooms = new BaseRoom[10];
 		this.maid = new Maid();
+		this.ledger = new RoachLedger();
 	}
 	
 	private RoachMotel(int numRooms) {
@@ -114,6 +116,7 @@ public class RoachMotel {
     public double checkOut(MotelRoom room, int days, String pay) {
     	rooms[room.getRoomNumber()] = builder.buildVacantRoom();
     	this.updateVacancy();
+    	
     	return room.getPrice() * days;
     }
 
@@ -129,7 +132,9 @@ public class RoachMotel {
     public boolean isVacant() {
     	return this.vacancy;
     }
-    
+    public void payment(Payment pay, double amount) {
+    	pay.pay(amount,ledger);
+    }
     private void updateVacancy() {
     	for(int index = 0; index < rooms.length; index++) {
     		if(rooms[index].isVacant()) {
