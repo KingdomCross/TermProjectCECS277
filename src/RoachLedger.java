@@ -26,7 +26,7 @@ public class RoachLedger {
 	public RoachLedger() {
 		try {
 			ledger = new PrintWriter("ledger.txt");
-			ledger.printf("%s-30s + %-30s + %-30s%n", "Name","Payment type","Amount");
+			ledger.printf("%-30s%-30s%-30s%n", "Name","Payment type","Amount");
 		} catch (FileNotFoundException e) {
 			System.out.println("Shouldn't be thrown as we are making a new file.");
 			e.printStackTrace();
@@ -34,7 +34,7 @@ public class RoachLedger {
 	}
 	
 	public void payment(Payment payment, double amount) {
-		ledger.printf("%s-30s + %-30s + %-30s%n", payment.getName(),payment.getMethod(),toDollar(amount));
+		ledger.printf("%-30s%-30s%-30s%n", payment.getName(),payment.getMethod(),toDollar(amount));
 	}
 	
 	public void close() {
