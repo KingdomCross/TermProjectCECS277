@@ -47,4 +47,8 @@ public abstract class BaseRoom implements MotelRoom{
 	public void accept(MotelRoomVisitor visitor) {
 		visitor.visit(this);
 	}
+	
+	public String toString() {
+		return String.format("%s room:\n\tRoom Number: %d\n\tDo Not Disturb: %s\n\tVacant: %s", this.getClass().getSimpleName(), this.getRoomNumber(), String.valueOf(this.isDisturbable()), String.valueOf(this.isVacant()));
+	}
 }

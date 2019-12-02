@@ -16,6 +16,7 @@ public class RoachMotel {
 	private RoachLedger ledger;
 	
 	private RoachMotel() {
+		this.vacancy = true;
 		this.waitList = new ArrayList<>();
 		this.builder = new RoomBuilder();
 		this.rooms = new BaseRoom[10];
@@ -24,9 +25,12 @@ public class RoachMotel {
 	}
 	
 	private RoachMotel(int numRooms) {
-		waitList = new ArrayList<>();
-		builder = new RoomBuilder();
-		rooms = new BaseRoom[numRooms];
+		this.vacancy = true;
+		this.waitList = new ArrayList<>();
+		this.builder = new RoomBuilder();
+		this.rooms = new BaseRoom[numRooms];
+		this.maid = new Maid();
+		this.ledger = new RoachLedger();
 	}
 	
     /**
@@ -70,10 +74,10 @@ public class RoachMotel {
     /**
      * If the RoachMotel is vacant, checks the argument RoachColony in to a MotelRoom indicated by the argument String, decorated with the Amenities indicated by the ArrayList of Strings.
      * If the MotelRoom is not vacant, adds the RoachColony to a waitlist to be notified when the RoachMotel is vacant.
-     * @param colony
-     * @param roomType
-     * @param amenities
-     * @return
+     * @param colony the RoachColony attempting to check in
+     * @param roomType the type of room the RoachColony is attempting to check into (Regular, Deluxe, Suite)
+     * @param amenities the type of amenities wanted with the room (FoodBar, RefillBar, Shower, Spa)
+     * @return the MotelRoom that the RoachColony is checked into, or a vacant room if the RoachMotel is not vacant
      */
     public MotelRoom checkIn(RoachColony colony, String roomType, ArrayList<String> amenities) {
     	//if the RoachMotel's vacant sign is up:
@@ -108,10 +112,10 @@ public class RoachMotel {
 
     /**
      * Calculates the price of the argument room's visit and charges the appropriate account based on the argument String.
-     * @param room
-     * @param days
-     * @param masterRoach
-     * @return
+     * @param room the MotelRoom being checked out
+     * @param days the number of days the MotelRoom being checked out was resided in
+     * @param payment the method of payment 
+     * @return the price of the motel room stay
      */
     public double checkOut(MotelRoom room, int days, Payment payment) {
     	rooms[room.getRoomNumber()] = builder.buildVacantRoom();

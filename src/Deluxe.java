@@ -15,7 +15,7 @@ public class Deluxe extends BaseRoom {
 		this.roomNumber = num;
 		this.resident = resi;
 		this.doNotDisturb = false;
-		this.vacancy = true;
+		this.vacancy = false;
 		System.out.println("Deluxe Room Created");
 	}
 }

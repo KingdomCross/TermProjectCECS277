@@ -13,7 +13,7 @@ public class Suite extends BaseRoom {
 		this.roomNumber = num;
 		this.resident = resi;
 		this.doNotDisturb = false;
-		this.vacancy = true;
+		this.vacancy = false;
 		System.out.println("Suite Created");
 	}
 }
