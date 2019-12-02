@@ -18,7 +18,7 @@ public class RoachMotel {
 		this.waitList = new ArrayList<>();
 		this.builder = new RoomBuilder();
 		this.rooms = new BaseRoom[10];
-		//this.maid = 
+		this.maid = new Maid();
 	}
 	
 	private RoachMotel(int numRooms) {
@@ -122,7 +122,7 @@ public class RoachMotel {
      */
     public void cleanRooms() {
     	for(int index = 0; index < rooms.length; index++) {
-    		rooms[index].visit();
+    		rooms[index].accept(this.maid);
     	}
     }
     
