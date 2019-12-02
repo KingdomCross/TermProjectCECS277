@@ -12,8 +12,6 @@ public abstract class BaseRoom implements MotelRoom{
 	protected boolean doNotDisturb;
 	protected boolean vacancy;
 	
-	public abstract void visit();
-	
 	public boolean isDisturbable() {
 		return this.doNotDisturb;
 	}
@@ -44,5 +42,9 @@ public abstract class BaseRoom implements MotelRoom{
 	
 	public void passDay(boolean hasShower) {
 		resident.party(hasShower);
+	}
+	
+	public void accept(MotelRoomVisitor visitor) {
+		visitor.visit(this);
 	}
 }

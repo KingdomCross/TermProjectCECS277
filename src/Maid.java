@@ -1,39 +1,34 @@
 public class Maid implements MotelRoomVisitor {
 
 	@Override
-	public void visit(Regular room) {
-		System.out.println("Maid is visiting Regular room.\n\tAll linens changed.\n\tTowels on floor replaced.");
+	public void visit(BaseRoom room) {
+		System.out.println("Maid is visiting " + room.getClass().getSimpleName() + " room at room number " + room.getRoomNumber() + ":"
+				+ "\n\tAll linens replaced.");
+		if(room instanceof Regular) {
+			System.out.println("\n\tAll towels on floor replaced.");
+		}
+		else if(room instanceof Deluxe) {
+			System.out.println("\n\tAll towels replaced.");
+		}
+		else if(room instanceof Suite) {
+			System.out.println("\n\tAll towels replaced.\n\tHamburger placed on pillow.");
+		}
 	}
 
 	@Override
-	public void visit(Deluxe room) {
-		System.out.println("Maid is visiting Deluxe room.\n\tAll linens changed.\n\tAll towels replaced.");
-
+	public void visit(Amenity room) {
+		if(room instanceof FoodBar) {
+			System.out.println("\n\tFood bar unlocked.");
+		}
+		else if(room instanceof RefillBar) {
+			System.out.println("\n\tRefill of food bar authorized.");
+		}
+		else if(room instanceof Shower) {
+			System.out.println("\n\tSpray-resistant shower unlocked and cleaned.");
+		}
+		else if(room instanceof Spa) {
+			System.out.println("\n\tSpa unlocked and cleaned.");
+		}
 	}
-
-	@Override
-	public void visit(Suite room) {
-		System.out.println("Maid is visiting Suite.\n\tAll linens changed.\n\tAll towels replaced.\n\tHamburger placed on pillow.");
-	}
-
-	@Override
-	public void visit(FoodBar room) {
-		System.out.println("\n\nFood Bar unlocked.");
-	}
-
-	@Override
-	public void visit(RefillBar room) {
-		System.out.println("\n\tFood Bar restock authorized.");
-	}
-
-	@Override
-	public void visit(Shower room) {
-		System.out.println("\n\tSpray-Resistant Shower unlocked and cleaned.");
-	}
-
-	@Override
-	public void visit(Spa room) {
-		System.out.println("\n\tSpa unlocked and cleaned.");		
-	}
-
+	
 }

@@ -43,7 +43,6 @@ public abstract class Amenity implements MotelRoom{
 	}
 	
 	public void accept(MotelRoomVisitor visitor) {
-		base.accept(visitor);
 		visitor.visit(this);
 	}
 }
