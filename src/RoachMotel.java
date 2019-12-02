@@ -12,11 +12,13 @@ public class RoachMotel {
 	private ArrayList<RoachColony> waitList;
 	private RoomBuilder builder;
 	private MotelRoom[] rooms;
+	private MotelRoomVisitor maid;
 	
 	private RoachMotel() {
-		waitList = new ArrayList<>();
-		builder = new RoomBuilder();
-		rooms = new BaseRoom[10];
+		this.waitList = new ArrayList<>();
+		this.builder = new RoomBuilder();
+		this.rooms = new BaseRoom[10];
+		//this.maid = 
 	}
 	
 	private RoachMotel(int numRooms) {

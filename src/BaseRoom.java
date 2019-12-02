@@ -30,6 +30,10 @@ public abstract class BaseRoom implements MotelRoom{
 		return this.resident;
 	}
 	
+	public int getRoomNumber() {
+		return this.roomNumber;
+	}
+
 	public boolean isVacant() {
 		return this.vacancy;
 	}
@@ -40,9 +44,5 @@ public abstract class BaseRoom implements MotelRoom{
 	
 	public void passDay(boolean hasShower) {
 		resident.party(hasShower);
-	}
-	
-	public int getRoomNumber() {
-		return this.roomNumber;
 	}
 }

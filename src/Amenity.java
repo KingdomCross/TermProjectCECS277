@@ -26,6 +26,10 @@ public abstract class Amenity implements MotelRoom{
 		return this.base.getResident();
 	}
 	
+	public int getRoomNumber() {
+		return this.base.getRoomNumber();
+	}
+
 	public boolean isVacant() {
 		return this.base.isVacant();
 	}
@@ -38,7 +42,8 @@ public abstract class Amenity implements MotelRoom{
 		this.base.passDay(hasShower);
 	}
 	
-	public int getRoomNumber() {
-		return this.base.getRoomNumber();
+	public void accept(MotelRoomVisitor visitor) {
+		base.accept(visitor);
+		visitor.visit(this);
 	}
 }
