@@ -15,16 +15,18 @@ public class RoomBuilder {
 	 * @return
 	 */
 	public MotelRoom buildRoom(RoachColony rc, String room, ArrayList<String> amenities, int roomNumber){  
-		MotelRoom newRoom = new Regular();
+		MotelRoom newRoom = new Regular(rc,roomNumber);
 		if(room.equalsIgnoreCase("Regular")) {
-			newRoom = amenities == null ? new Regular() : placeAmenities(amenities, new Regular(rc, roomNumber));
+			newRoom = amenities == null ? new Regular(rc,roomNumber) : placeAmenities(amenities, new Regular(rc, roomNumber));
 		}
 		else if(room.equalsIgnoreCase("Deluxe")) {
-			newRoom = amenities == null ? new Deluxe() : placeAmenities(amenities, new Deluxe(rc, roomNumber));
+			System.out.println("test");
+			newRoom = amenities == null ? new Deluxe(rc,roomNumber) : placeAmenities(amenities, new Deluxe(rc, roomNumber));
 		}
 		else if(room.equalsIgnoreCase("Suite")) {
-			newRoom = amenities == null ? new Suite() : placeAmenities(amenities, new Suite(rc, roomNumber));
+			newRoom = amenities == null ? new Suite(rc,roomNumber) : placeAmenities(amenities, new Suite(rc, roomNumber));
 		}
+		
 		return newRoom;  
 	}
 	
