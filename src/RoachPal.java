@@ -15,8 +15,12 @@ public class RoachPal implements Payment {
 
 	@Override
 	public void pay(double amount, RoachLedger ledger) {
-		ledger.palPayment(this, amount);
+		ledger.payment(this, amount);
 
+	}
+	
+	public String getMethod() {
+		return "RoachPal";
 	}
 
 }

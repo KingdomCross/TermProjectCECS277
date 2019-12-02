@@ -13,12 +13,15 @@ public class MasterRoach implements Payment {
 	}
 	
 	public void pay(double amount, RoachLedger ledger) {
-		ledger.masterPayment(this, amount);
+		ledger.payment(this, amount);
 
 	}
 	
 	public String getName() {
 		return name;
 	}
-
+	
+	public String getMethod() {
+		return "MasterRoach";
+	}
 }

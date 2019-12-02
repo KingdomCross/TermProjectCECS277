@@ -113,10 +113,10 @@ public class RoachMotel {
      * @param masterRoach
      * @return
      */
-    public double checkOut(MotelRoom room, int days, String pay) {
+    public double checkOut(MotelRoom room, int days, Payment payment) {
     	rooms[room.getRoomNumber()] = builder.buildVacantRoom();
     	this.updateVacancy();
-    	
+    	payment(payment,room.getPrice()*days);
     	return room.getPrice() * days;
     }
 
@@ -128,7 +128,9 @@ public class RoachMotel {
     		rooms[index].accept(this.maid);
     	}
     }
-    
+    public void close() {
+    	ledger.close();
+    }
     public boolean isVacant() {
     	return this.vacancy;
     }
