@@ -16,8 +16,4 @@ public class Regular extends BaseRoom {
 		this.vacancy = false;
 		System.out.println("Regular Room created.");
 	}
-	
-	public static void main(String[] args) { //main method
-		Regular room = new Regular();
-	}
 }

@@ -8,8 +8,6 @@ public abstract class Amenity implements MotelRoom{
 	protected MotelRoom base;
 	protected int price;
 	
-	public abstract void visit();
-	
 	public boolean isDisturbable() {
 		return this.base.isDisturbable();
 	}
@@ -43,6 +41,7 @@ public abstract class Amenity implements MotelRoom{
 	}
 	
 	public void accept(MotelRoomVisitor visitor) {
+		base.accept(visitor);
 		visitor.visit(this);
 	}
 }
