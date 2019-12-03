@@ -44,4 +44,9 @@ public abstract class Amenity implements MotelRoom{
 		base.accept(visitor);
 		visitor.visit(this);
 	}
+	
+	@Override
+	public String toString() {
+		return base.toString() + "\n    " + this.getClass().getSimpleName();
+	}
 }

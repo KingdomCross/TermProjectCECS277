@@ -42,7 +42,7 @@ public class TestRoom2 {
         amenities.add("shower");
         MotelRoom r1 = rm.checkIn(rc1,"Suite",amenities);
         System.out.println(rc1);
-        System.out.println(rm);
+        System.out.println(r1);
         //r1.setDoNotDisturb();
         RoachColony rc2 = new RoachColony("Second colony",1000,0.2);
         ArrayList amenities2 = new ArrayList();
