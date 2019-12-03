@@ -1,3 +1,6 @@
+/*
+ * @author Thomas McSwain
+ */
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,15 +12,23 @@ import java.util.Scanner;
 
 public class RoachLedger {
 	
+	/**
+	 * Converts a double to a string dollar amount
+	 *
+	 * @param a the double to be converted
+	 * @return the string representation of a dollar
+	 */
+	//
 	private static String toDollar(double a) {
+		//
 		String doub = Double.toString(a);
 		if(doub.contains(".")) {
 			if(doub.length()-doub.indexOf(".")==3) {
 				return "$"+doub;
-				
+			 //
 			}else if(doub.length()-doub.indexOf(".")==2) {
 				return "$"+doub+"0";
-				
+			 //	
 			}else{
 				return "$"+ doub.substring(0,doub.indexOf(".")+3);
 			}
@@ -25,7 +36,11 @@ public class RoachLedger {
 			return "$"+doub+".00";
 		}
 	}
-	//
+	
+	/**
+	 * Instantiates a new roach ledger.
+	 * Default constructor.
+	 */
 	public RoachLedger() {
 		try (PrintWriter ledger = new PrintWriter("ledger.txt");) {
 			
@@ -35,6 +50,12 @@ public class RoachLedger {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * To string.
+	 *
+	 * @return the string
+	 */
 	@Override
 	public String toString() {
 		return readIn().toString();
@@ -42,6 +63,11 @@ public class RoachLedger {
 	}
 	
 	
+	/**
+	 * Converts the ledger into a stringbuilder.
+	 *
+	 * @return the string builder that has the contents of the ledger
+	 */
 	public StringBuilder readIn() {
 		try (BufferedReader reader = new BufferedReader(new FileReader(new File("ledger.txt")))){
 			StringBuilder buffer = new StringBuilder();
@@ -62,6 +88,13 @@ public class RoachLedger {
 			return (new StringBuilder()).append("Error trying to read ledger");
 		} 
 	}
+	
+	/**
+	 * Add a payment to the ledger
+	 *
+	 * @param payment the Payment Strategy they used for paying.
+	 * @param amount the amount to be paid
+	 */
 	public void payment(Payment payment, double amount) {
 		StringBuilder buffer = readIn();
 		buffer.append(String.format("%-30s%-30s%-30s%n", payment.getName(),payment.getMethod(),toDollar(amount)));
