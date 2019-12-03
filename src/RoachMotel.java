@@ -166,16 +166,16 @@ public class RoachMotel {
     public String toString() {
     	String toRet = "";
     	toRet += "Current state of RoachMotel:\n";
-    	toRet += "-----------------------------\n";
-    	toRet += "Max Occupancy: "+rooms.length+"\n";
+    	toRet += "-----------------------------\n\n";
+    	toRet += "Max Occupancy: "+rooms.length+"\n\n";
     	toRet += "State of the rooms:\n";         
     	toRet += "-----------------------------\n";
-    	for(MotelRoom room : rooms) toRet+=room.toString();
-    	toRet+="\n";
+    	for(MotelRoom room : rooms) toRet+=room.toString()+"\n";
+    	toRet+="\n\n";
     	toRet += "Waitlist:\n";
     	toRet += "-----------------------------\n";
     	for(Customer customer : waitList) toRet+=customer.toString();
-    	toRet+="\n";
+    	toRet+="\n\n";
     	toRet += "Ledger: \n";
     	toRet += "-----------------------------\n";
     	toRet+=ledger.toString();
