@@ -19,7 +19,7 @@ public class RoachMotel {
 		this.vacancy = true;
 		this.waitList = new ArrayList<>();
 		this.builder = new RoomBuilder();
-		this.rooms = new BaseRoom[10];
+		this.rooms = new MotelRoom[10];
 		this.maid = new Maid();
 		this.ledger = new RoachLedger();
 	}
@@ -28,7 +28,7 @@ public class RoachMotel {
 		this.vacancy = true;
 		this.waitList = new ArrayList<>();
 		this.builder = new RoomBuilder();
-		this.rooms = new BaseRoom[numRooms];
+		this.rooms = new MotelRoom[numRooms];
 		this.maid = new Maid();
 		this.ledger = new RoachLedger();
 	}
@@ -91,7 +91,7 @@ public class RoachMotel {
     				//set the dummy room to the specifications
     				newRoom = builder.buildRoom(colony, roomType, amenities, index);
     				//set the vacant MotelRoom to the newly created MotelRoom
-    				//rooms[index] = newRoom;
+    				rooms[index] = newRoom;
     				//check if the RoachMotel is now vacant
     				this.updateVacancy();
     				//stop checking for vacant MotelRooms
