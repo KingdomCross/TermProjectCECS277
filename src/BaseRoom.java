@@ -49,6 +49,6 @@ public abstract class BaseRoom implements MotelRoom{
 	}
 	
 	public String toString() {
-		return String.format("%s room:\n\tRoom Number: %d\n\tDo Not Disturb: %s\n\tVacant: %s", this.getClass().getSimpleName(), this.getRoomNumber(), String.valueOf(this.isDisturbable()), String.valueOf(this.isVacant()));
+		return String.format("%s room:\n  Room Number: %d\n  Do Not Disturb: %s\n  Vacant: %s\n  Amenities:", this.getClass().getSimpleName(), this.getRoomNumber(), String.valueOf(this.isDisturbable()), String.valueOf(this.isVacant()));
 	}
 }
