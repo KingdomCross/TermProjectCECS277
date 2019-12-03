@@ -59,7 +59,7 @@ public class RoachColony implements Customer{
     
     @Override
     public String toString() {
-    	return String.format("%nColony Name:%s%nPopulation: %d%nGrowth Rate: %.2f%%", this.name, this.init_pop, this.growth*100);
+    	return String.format("%nColony Name: %s%nPopulation: %d%nGrowth Rate: %.2f%%", this.name, this.init_pop, this.growth*100);
     }
     
     public static void main(String args[]) {
