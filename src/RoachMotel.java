@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Represents a Roach Motel with a certain number of rooms and maids.
@@ -158,5 +159,28 @@ public class RoachMotel {
     		}
     	}
     	this.vacancy = false;
+    }
+    public void print() {
+    	System.out.println(this.toString());
+    }
+    public String toString() {
+    	String toRet = "";
+    	toRet += "Current state of RoachMotel:\n";
+    	toRet += "-----------------------------\n";
+    	toRet += "Max Occupancy: "+rooms.length+"\n";
+    	toRet += "State of the rooms:\n";         
+    	toRet += "-----------------------------\n";
+    	for(MotelRoom room : rooms) toRet+=room.toString();
+    	toRet+="\n";
+    	toRet += "Waitlist:\n";
+    	toRet += "-----------------------------\n";
+    	for(Customer customer : waitList) toRet+=customer.toString();
+    	toRet+="\n";
+    	toRet += "Ledger: \n";
+    	toRet += "-----------------------------\n";
+    	toRet+=ledger.toString();
+    	return toRet;
+    	
+    	
     }
 }
