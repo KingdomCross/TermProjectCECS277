@@ -3,4 +3,12 @@ public class Shower extends Amenity {
 		this.price = 25;
 		this.base = baseRoom;
 	}
+	
+	public void passDay() {
+		base.passDay(true);
+	}
+	
+	public void passDay(boolean hasShower) {
+		base.passDay(true);
+	}
 }
