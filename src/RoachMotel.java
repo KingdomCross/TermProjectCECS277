@@ -109,7 +109,9 @@ public class RoachMotel {
     		return builder.buildVacantRoom();
     	}
     }
-
+    public String ledgerToString() {
+    	return ledger.toString();
+    }
     /**
      * Calculates the price of the argument room's visit and charges the appropriate account based on the argument String.
      * @param room the MotelRoom being checked out

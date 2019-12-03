@@ -35,32 +35,44 @@ public class RoachLedger {
 			e.printStackTrace();
 		}
 	}
+	@Override
+	public String toString() {
+		return readIn().toString();
+		
+	}
 	
-	public void payment(Payment payment, double amount) {
+	
+	public StringBuilder readIn() {
 		try (BufferedReader reader = new BufferedReader(new FileReader(new File("ledger.txt")))){
 			StringBuilder buffer = new StringBuilder();
 			String temp;
 			while( (temp = reader.readLine()) !=null) {
 				buffer.append(temp).append("\n");
 			}
-			buffer.append(String.format("%-30s%-30s%-30s%n", payment.getName(),payment.getMethod(),toDollar(amount)));
-			reader.close();
-			try (PrintWriter writer = new PrintWriter(new File("ledger.txt"))){
-				writer.write(buffer.toString());
-			}catch(Exception e) {
-				System.out.println("Error trying to rewrite the ledger");
-				e.printStackTrace();
-			}
-		} catch (FileNotFoundException e1) {
+			
+			return buffer;
+		}catch (FileNotFoundException e1) {
 			System.out.println("Couldn't find ledger.txt in working directory");
 			e1.printStackTrace();
-		} catch (IOException e) {
+			return (new StringBuilder()).append("Error trying to read ledger");
+		}	
+		catch (IOException e) {
 			System.out.println("Io exception when trying to parse ledger");
 			e.printStackTrace();
+			return (new StringBuilder()).append("Error trying to read ledger");
 		} 
-		
-
 	}
+	public void payment(Payment payment, double amount) {
+		StringBuilder buffer = readIn();
+		buffer.append(String.format("%-30s%-30s%-30s%n", payment.getName(),payment.getMethod(),toDollar(amount)));
+		try (PrintWriter writer = new PrintWriter(new File("ledger.txt"))){
+			writer.write(buffer.toString());
+		}catch(Exception e) {
+			System.out.println("Error trying to rewrite the ledger");
+			e.printStackTrace();
+		}
+	} 	
+
 	
 //	public void close() {
 //		ledger.close();
@@ -80,7 +92,9 @@ public class RoachLedger {
 		System.out.println("Attempting checkOut()...");
 		rm.checkOut(temp, 2, new RoachPal("test","email"));
 		Scanner pause = new Scanner(System.in);
+		System.out.println(rm.ledgerToString());
 		pause.nextLine();
 		rm.checkOut(temp2, 3, new RoachPal("test2","email"));
+		System.out.println(rm.ledgerToString());
 	}
 }
