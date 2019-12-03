@@ -6,7 +6,7 @@ public class RoachColony implements Customer{
 	public RoachColony() {
 		this.name = "Empty colony";
 		this.init_pop = 0;
-		this.growth = 0;
+		this.growth = 0.0;
 	}
 	
     public RoachColony(String name, int init_pop, double growth) {
@@ -21,7 +21,7 @@ public class RoachColony implements Customer{
      * @param hasShower
      */
     public void party(boolean hasShower) {
-    	this.init_pop *= this.growth;
+    	this.init_pop *= (1 + this.growth);
     	System.out.println("Colony partied and grew %" + this.growth);
     	if(hasShower) {
     		this.init_pop *= 0.75;
@@ -55,5 +55,15 @@ public class RoachColony implements Customer{
     public void update()
     {
     	System.out.println("Room Available");
+    }
+    
+    @Override
+    public String toString() {
+    	return String.format("    Colony Name:%s%n    Population: %d%n    Growth Rate: %.2f%%", this.name, this.init_pop, this.growth*100);
+    }
+    
+    public static void main(String args[]) {
+    	System.out.println(new RoachColony());
+    	System.out.println(new RoachColony("test", 100, 1.0));
     }
 }
