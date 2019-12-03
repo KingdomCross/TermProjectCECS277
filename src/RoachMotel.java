@@ -109,6 +109,7 @@ public class RoachMotel {
     		return builder.buildVacantRoom();
     	}
     }
+    
     public String ledgerToString() {
     	return ledger.toString();
     }
@@ -134,15 +135,15 @@ public class RoachMotel {
     		rooms[index].accept(this.maid);
     	}
     }
-//    public void close() {
-//    	ledger.close();
-//    }
+
     public boolean isVacant() {
     	return this.vacancy;
     }
+    
     public void payment(Payment pay, double amount) {
     	pay.pay(amount,ledger);
     }
+    
     /**
      * Iterates through the room list to and checks if room is Vacant
      * If so, update the RoachColinies on the waitList
@@ -151,10 +152,8 @@ public class RoachMotel {
     	for(int index = 0; index < rooms.length; index++) {
     		if(rooms[index].isVacant()) {
     			this.vacancy = true;
-    			for (RoachColony r : waitList)
-    			{
-    				r.update();
-    			}
+    			for (RoachColony r : waitList) r.update();
+    			waitList.clear();
     			return;
     		}
     	}
