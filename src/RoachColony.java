@@ -35,4 +35,9 @@ public class RoachColony {
     public int getPopulation() {
     	return this.init_pop;
     }
+    
+    public void update()
+    {
+    	System.out.println("New Room Vacant");
+    }
 }

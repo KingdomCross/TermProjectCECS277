@@ -141,10 +141,17 @@ public class RoachMotel {
     public void payment(Payment pay, double amount) {
     	pay.pay(amount,ledger);
     }
+    /**
+     * Iterates through the room list to find 
+     */
     private void updateVacancy() {
     	for(int index = 0; index < rooms.length; index++) {
     		if(rooms[index].isVacant()) {
     			this.vacancy = true;
+    			for (RoachColony r : waitList)
+    			{
+    				r.update();
+    			}
     			return;
     		}
     	}
