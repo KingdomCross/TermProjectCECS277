@@ -15,6 +15,11 @@ public class RoachColony {
     	this.growth = growth;
     } //Customer
 
+    /**
+     * Simulates the Partying of Roaches, checks if Shower was previously bought
+     * Shower dictates how much of the colony is wiped out 
+     * @param hasShower
+     */
     public void party(boolean hasShower) {
     	this.init_pop *= this.growth;
     	System.out.println("Colony partied and grew %" + this.growth);
@@ -28,16 +33,27 @@ public class RoachColony {
     	}
     }
     
+    /**
+     * return the name of the Colony
+     * @return
+     */
     public String getName() {
     	return this.name;
     }
     
+    /**
+     * returns the population of the Colony
+     * @return
+     */
     public int getPopulation() {
     	return this.init_pop;
     }
     
+    /**
+     * Displays room availability when notified by the RoachMotel
+     */
     public void update()
     {
-    	System.out.println("New Room Vacant");
+    	System.out.println("Room Available");
     }
 }

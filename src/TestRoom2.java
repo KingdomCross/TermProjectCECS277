@@ -56,7 +56,7 @@ public class TestRoom2 {
         Double cost = rm.checkOut(r2,3,P);
     	System.out.println("cost:" + cost);
         System.out.println(rm);
-  //      RoachColony rc3 = new RoachColony("third colony",300,0.3);
+        RoachColony rc3 = new RoachColony("third colony",300,0.3);
 //        MotelRoom r3 = rm.checkIn(rc3,"Regular",amenities2);
 //        RoachColony rc4 = new RoachColony("fourth colony",400,0.4);
 //        MotelRoom r4 = rm.checkIn(rc4,"Regular",amenities2);

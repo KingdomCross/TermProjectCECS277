@@ -91,7 +91,7 @@ public class RoachMotel {
     				//set the dummy room to the specifications
     				newRoom = builder.buildRoom(colony, roomType, amenities, index);
     				//set the vacant MotelRoom to the newly created MotelRoom
-    				rooms[index] = newRoom;
+    				//rooms[index] = newRoom;
     				//check if the RoachMotel is now vacant
     				this.updateVacancy();
     				//stop checking for vacant MotelRooms
@@ -142,7 +142,8 @@ public class RoachMotel {
     	pay.pay(amount,ledger);
     }
     /**
-     * Iterates through the room list to find 
+     * Iterates through the room list to and checks if room is Vacant
+     * If so, update the RoachColinies on the waitList
      */
     private void updateVacancy() {
     	for(int index = 0; index < rooms.length; index++) {

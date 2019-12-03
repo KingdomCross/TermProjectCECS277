@@ -5,7 +5,7 @@ public class Regular extends BaseRoom {
 		this.resident = new RoachColony();
 		this.doNotDisturb = false;
 		this.vacancy = true;
-		System.out.println("Vacant Regular Room created.");
+		//System.out.println("Vacant Regular Room created.");
 	}
 	
 	public Regular(RoachColony resi, int num) {
