@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class RoachMotel {
 	private static RoachMotel singleMotel;
 	private boolean vacancy;
-	private ArrayList<RoachColony> waitList;
+	private ArrayList<Customer> waitList;
 	private RoomBuilder builder;
 	private MotelRoom[] rooms;
 	private MotelRoomVisitor maid;
@@ -17,7 +17,7 @@ public class RoachMotel {
 	
 	private RoachMotel() {
 		this.vacancy = true;
-		this.waitList = new ArrayList<>();
+		this.waitList = new ArrayList<Customer>();
 		this.builder = new RoomBuilder();
 		this.rooms = new MotelRoom[10];
 		this.maid = new Maid();
@@ -26,7 +26,7 @@ public class RoachMotel {
 	
 	private RoachMotel(int numRooms) {
 		this.vacancy = true;
-		this.waitList = new ArrayList<>();
+		this.waitList = new ArrayList<Customer>();
 		this.builder = new RoomBuilder();
 		this.rooms = new MotelRoom[numRooms];
 		this.maid = new Maid();
@@ -152,7 +152,7 @@ public class RoachMotel {
     	for(int index = 0; index < rooms.length; index++) {
     		if(rooms[index].isVacant()) {
     			this.vacancy = true;
-    			for (RoachColony r : waitList) r.update();
+    			for (Customer r : waitList) r.update();
     			waitList.clear();
     			return;
     		}

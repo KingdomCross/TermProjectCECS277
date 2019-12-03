@@ -1,4 +1,4 @@
-public class RoachColony {
+public class RoachColony implements Customer{
 	private String name;
 	private int init_pop;
 	private double growth;
