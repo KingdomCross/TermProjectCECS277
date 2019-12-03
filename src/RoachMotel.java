@@ -163,6 +163,7 @@ public class RoachMotel {
     public void print() {
     	System.out.println(this.toString());
     }
+    //
     public String toString() {
     	String toRet = "";
     	toRet += "Current state of RoachMotel:\n";
