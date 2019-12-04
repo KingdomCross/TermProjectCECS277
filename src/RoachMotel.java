@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Represents a Roach Motel with a certain number of rooms and maids.
@@ -14,6 +13,7 @@ public class RoachMotel {
 	private RoomBuilder builder;
 	private MotelRoomVisitor maid;
 	private RoachLedger ledger;
+	private MotelRoom[] rooms;
 	
 	private RoachMotel() {
 		this.vacancy = true;
@@ -90,6 +90,8 @@ public class RoachMotel {
     			if(rooms[index].isVacant()) {
     				//set the dummy room to the specifications
     				newRoom = builder.buildRoom(colony, roomType, amenities, index);
+    				colony.setAmenities(amenities);
+    				//colony.setRoom(newRoom);
     				//set the vacant MotelRoom to the newly created MotelRoom
     				rooms[index] = newRoom;
     				//check if the RoachMotel is now vacant
@@ -161,6 +163,10 @@ public class RoachMotel {
     }
     public void print() {
     	System.out.println(this.toString());
+    }
+    public MotelRoom getRoom(int room)
+    {
+    	return rooms[room];
     }
     //
     public String toString() {

@@ -11,6 +11,7 @@ public abstract class BaseRoom implements MotelRoom{
 	protected int price, roomNumber;
 	protected boolean doNotDisturb;
 	protected boolean vacancy;
+	protected ArrayList<String> A;
 	
 	public boolean isDisturbable() {
 		return this.doNotDisturb;

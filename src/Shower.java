@@ -11,4 +11,10 @@ public class Shower extends Amenity {
 	public void passDay(boolean hasShower) {
 		base.passDay(true);
 	}
+
+
+	public boolean hasShower() {
+		// TODO Auto-generated method stub
+		return true;
+	}
 }

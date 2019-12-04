@@ -15,9 +15,9 @@ public class RoomBuilder {
 	 * @return a fully decorated Regular, Deluxe, or Suite based on the argument String, or a vacant Regular if the String cannot be interpreted as one of the three
 	 */
 	public MotelRoom buildRoom(RoachColony colony, String room, ArrayList<String> amenities, int roomNumber){
-		if(room.equalsIgnoreCase("regular")) return placeAmenities(amenities, new Regular(colony, roomNumber));
-		else if(room.equalsIgnoreCase("deluxe")) return placeAmenities(amenities, new Deluxe(colony, roomNumber));
-		else if(room.equalsIgnoreCase("suite")) return placeAmenities(amenities, new Suite(colony, roomNumber));
+		if(room.equalsIgnoreCase("regular")) return placeAmenities(amenities, new Regular(colony, roomNumber, amenities));
+		else if(room.equalsIgnoreCase("deluxe")) return placeAmenities(amenities, new Deluxe(colony, roomNumber, amenities));
+		else if(room.equalsIgnoreCase("suite")) return placeAmenities(amenities, new Suite(colony, roomNumber, amenities));
 		return buildVacantRoom();  
 	}
 	
@@ -36,6 +36,7 @@ public class RoomBuilder {
 	 * @return the argument MotelRoom decorated with Amenities based on the argument ArrayList
 	 */
 	private MotelRoom placeAmenities(ArrayList<String> amenities, MotelRoom base) {
+		
 		//base case - all amenities have been applied
 		if(amenities.size() == 0) return base;
 		//recursive case - still have amenities to apply
@@ -48,6 +49,7 @@ public class RoomBuilder {
 			switch(tempList.remove(0).toLowerCase()) {
 			//if the String is foodbar, wrap the argument MotelRoom with a FoodBar
 			case "foodbar":
+				
 				newRoom = new FoodBar(base);
 				break;
 			//if the String is refillbar, wrap the argument MotelRoom with a RefillBar
@@ -58,7 +60,7 @@ public class RoomBuilder {
 			case "shower":
 				newRoom = new Shower(base);
 				break;
-			//if the String is spa, wrap the argument MotelRoom with a Spa
+			//if the String is Spa, wrap the argument MotelRoom with a Spa
 			case "spa":
 				newRoom = new Spa(base);
 				break;

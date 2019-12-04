@@ -8,4 +8,5 @@ public interface MotelRoom {
 	public void passDay();
 	public void passDay(boolean hasShower);
 	public void accept(MotelRoomVisitor visitor);
+	
 }

@@ -1,7 +1,12 @@
+import java.util.ArrayList;
+
 public class RoachColony implements Customer{
 	private String name;
 	private int init_pop;
 	private double growth;
+	private MotelRoom room;
+	private boolean shower;
+	private ArrayList<String> a;
 	
 	public RoachColony() {
 		this.name = "Empty colony";
@@ -33,7 +38,31 @@ public class RoachColony implements Customer{
     	}
     }
     
-    /**
+
+	public void party() {
+    	this.init_pop *= (1 + this.growth);
+    	System.out.println("Colony partied and grew %" + this.growth);
+    	if(a.contains("Shower")) {
+    		this.init_pop *= 0.75;
+    		System.out.println("Colony has a shower, and population therefore decreased by 25%.");
+    	}
+    	else {
+    		this.init_pop *= 0.5;
+    		System.out.println("Colony does not have a shower, and population therefore decreased by 50%.");
+    	}
+		
+	}
+    
+    private boolean hasShower()
+    {
+    	return shower;
+    }
+    public void setShower(boolean b) {
+		// TODO Auto-generated method stub
+		shower =b;
+	}
+
+	/**
      * return the name of the Colony
      * @return
      */
@@ -61,9 +90,20 @@ public class RoachColony implements Customer{
     public String toString() {
     	return String.format("\n    Colony Name: %s\n    Population: %d\n    Growth Rate: %.2f%%", this.name, this.init_pop, this.growth*100);
     }
-    
-    public static void main(String args[]) {
-    	System.out.println(new RoachColony());
-    	System.out.println(new RoachColony("test", 100, 1.0));
-    }
+
+	public MotelRoom getRoom() {
+		return room;
+	}
+
+	public void setRoom(MotelRoom room) {
+		this.room = room;
+	}
+
+	public void setAmenities(ArrayList<String> amenities) {
+		// TODO Auto-generated method stub
+		a = amenities;
+		
+		
+	}
+
 }
