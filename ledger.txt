@@ -1,2 +1,1 @@
 Name                          Payment type                  Amount                        
-MasterRoach                   RoachPal                      $180.00                       

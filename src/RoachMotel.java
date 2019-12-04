@@ -12,7 +12,6 @@ public class RoachMotel {
 	private boolean vacancy;
 	private ArrayList<Customer> waitList;
 	private RoomBuilder builder;
-	private MotelRoom[] rooms;
 	private MotelRoomVisitor maid;
 	private RoachLedger ledger;
 	
