@@ -13,6 +13,9 @@ public abstract class BaseRoom implements MotelRoom{
 	protected boolean vacancy;
 	protected int days = 0;
 	
+	/**
+	 * returns whether the room can be disturbed - true means that the room can be entered
+	 */
 	public boolean isDisturbable() {
 		return this.disturbable;
 	}
