@@ -1,15 +1,14 @@
-import java.util.ArrayList;
+
 
 public class Regular extends BaseRoom {
 	
-
+	private boolean shower;
 	public Regular() {
 		this.price = 50;
 		this.roomNumber = -1;
 		this.resident = new RoachColony();
 		this.doNotDisturb = false;
 		this.vacancy = true;
-		//System.out.println("Vacant Regular Room created.");
 	}
 	
 	public Regular(RoachColony resi, int num) {
@@ -18,6 +17,17 @@ public class Regular extends BaseRoom {
 		this.resident = resi;
 		this.doNotDisturb = false;
 		this.vacancy = false;
-		System.out.println("Regular Room created.");
+
+	}
+
+	@Override
+	public void hasShower(boolean b) {
+		// TODO Auto-generated method stub
+		shower = b;
+	}
+	
+	public boolean hasShower()
+	{
+		return shower;
 	}
 }

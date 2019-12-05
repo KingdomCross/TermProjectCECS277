@@ -59,6 +59,7 @@ public class RoomBuilder {
 			//if the String is shower, wrap the argument MotelRoom with a Shower
 			case "shower":
 				newRoom = new Shower(base);
+				base.hasShower(true);
 				break;
 			//if the String is Spa, wrap the argument MotelRoom with a Spa
 			case "spa":

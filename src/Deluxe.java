@@ -1,14 +1,15 @@
-import java.util.ArrayList;
+
 
 public class Deluxe extends BaseRoom {
-	public boolean shower;
+	private boolean shower;
 	public Deluxe(){
 		this.price = 75;
 		this.roomNumber = -1;
 		this.resident = new RoachColony();
 		this.doNotDisturb = false;
 		this.vacancy = true;
-		System.out.println("Vacant Deluxe Room Created");
+		
+		//System.out.println("Vacant Deluxe Room Created");
 	}
 	
 	public Deluxe(RoachColony resi, int num) {
@@ -17,6 +18,17 @@ public class Deluxe extends BaseRoom {
 		this.resident = resi;
 		this.doNotDisturb = false;
 		this.vacancy = false;
-		System.out.println("Deluxe Room Created");
+		//System.out.println("Deluxe Room Created");
+	}
+
+	@Override
+	public void hasShower(boolean b) {
+		shower = b;
+		
+	}
+	
+	public boolean hasShower()
+	{
+		return shower;
 	}
 }

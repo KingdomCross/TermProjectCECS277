@@ -90,6 +90,7 @@ public class RoachMotel {
     			if(rooms[index].isVacant()) {
     				//set the dummy room to the specifications
     				newRoom = builder.buildRoom(colony, roomType, amenities, index);
+    				colony.setRoom(newRoom);
     				//set the vacant MotelRoom to the newly created MotelRoom
     				rooms[index] = newRoom;
     				//check if the RoachMotel is now vacant

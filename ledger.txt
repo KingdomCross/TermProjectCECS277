@@ -1,2 +1,3 @@
 Name                          Payment type                  Amount                        
 Mr. Roach                     MasterRoach                   $330.00                       
+MasterRoach                   RoachPal                      $450.00                       

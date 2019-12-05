@@ -14,8 +14,4 @@ public class Shower extends Amenity {
 	}
 
 
-	public boolean hasShower() {
-		// TODO Auto-generated method stub
-		return true;
-	}
 }

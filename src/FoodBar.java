@@ -3,4 +3,5 @@ public class FoodBar extends Amenity {
 		this.price = 10;
 		this.base = baseRoom;
 	}
+
 }
