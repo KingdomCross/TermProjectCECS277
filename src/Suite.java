@@ -20,11 +20,6 @@ public class Suite extends BaseRoom {
 		//System.out.println("Suite Created");
 	}
 
-	@Override
-	public void hasShower(boolean b) {
-		// TODO Auto-generated method stub
-		shower = b;
-	}
 	
 	public boolean hasShower()
 	{

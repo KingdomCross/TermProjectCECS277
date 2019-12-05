@@ -10,7 +10,6 @@ public abstract class BaseRoom implements MotelRoom{
 	protected int price, roomNumber;
 	protected boolean doNotDisturb;
 	protected boolean vacancy;
-	public boolean hasShower = false;
 	
 	public boolean isDisturbable() {
 		return this.doNotDisturb;

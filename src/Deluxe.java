@@ -20,12 +20,6 @@ public class Deluxe extends BaseRoom {
 		this.vacancy = false;
 		//System.out.println("Deluxe Room Created");
 	}
-
-	@Override
-	public void hasShower(boolean b) {
-		shower = b;
-		
-	}
 	
 	public boolean hasShower()
 	{

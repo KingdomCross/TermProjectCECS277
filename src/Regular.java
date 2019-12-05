@@ -19,12 +19,6 @@ public class Regular extends BaseRoom {
 		this.vacancy = false;
 
 	}
-
-	@Override
-	public void hasShower(boolean b) {
-		// TODO Auto-generated method stub
-		shower = b;
-	}
 	
 	public boolean hasShower()
 	{
