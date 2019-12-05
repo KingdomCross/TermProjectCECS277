@@ -12,7 +12,6 @@ public interface MotelRoom {
 	public int getRoomNumber();
 	public boolean isVacant();
 	public void passDay();
-	public void passDay(boolean hasShower);
 	public void accept(MotelRoomVisitor visitor);
 	public boolean hasShower();
 }

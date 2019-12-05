@@ -55,9 +55,9 @@ public abstract class BaseRoom implements MotelRoom{
 	 * simulates the Day pass with the hasShower
 	 * @param boolean if shower is in room
 	 */
-	public void passDay(boolean hasShower) {
-		resident.party(hasShower);
-	}
+//	public void passDay(boolean hasShower) {
+//		resident.party(hasShower);
+//	}
 	/**
 	 * Accepts visitor and assigns the visitor to a room
 	 */

@@ -48,13 +48,7 @@ public abstract class Amenity implements MotelRoom{
 	 * Simulates 1 day passing
 	 */
 	public void passDay() {
-		this.base.passDay(false);
-	}
-	/**
-	 * Simulates 1 day passing with optional boolean for shower
-	 */
-	public void passDay(boolean hasShower) {
-		this.base.passDay(hasShower);
+		this.base.passDay();
 	}
 	/**
 	 * allows visitors to visit MotelRoom

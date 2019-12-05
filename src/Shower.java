@@ -17,13 +17,7 @@ public class Shower extends Amenity {
 	 * Passes day for colony visit
 	 */
 	public void passDay() {
-		base.passDay(true);
-	}
-	/**
-	 * Passes day for colony visit
-	 */
-	public void passDay(boolean hasShower) {
-		base.passDay(true);
+		base.passDay();
 	}
 
 	/**
