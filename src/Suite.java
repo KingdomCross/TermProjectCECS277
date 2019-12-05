@@ -1,5 +1,9 @@
-
-
+/**
+ * This Class  creates the Deluxe Rooms
+ * @author ???
+ *	Input: Takes in the RoachColony and it's population and assigns itself to the room
+ *	Output: Creates Regular Room object at the request of the RoomBuilder class
+ */
 public class Suite extends BaseRoom {
 	private boolean shower;
 	public Suite(){
@@ -20,7 +24,9 @@ public class Suite extends BaseRoom {
 		//System.out.println("Suite Created");
 	}
 
-	
+	/**
+	 * returns true if Shower Amenity was purchased
+	 */
 	public boolean hasShower()
 	{
 		return shower;

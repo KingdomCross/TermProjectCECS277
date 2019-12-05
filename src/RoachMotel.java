@@ -2,9 +2,10 @@ import java.util.ArrayList;
 
 /**
  * Represents a Roach Motel with a certain number of rooms and maids.
- * 
+ * Utilizes Singleton Pattern
  * @author Alexander Dung
- *
+ * Input: Takes in
+ * Ouput:
  */
 public class RoachMotel {
 	private static RoachMotel singleMotel;
@@ -14,7 +15,9 @@ public class RoachMotel {
 	private MotelRoomVisitor maid;
 	private RoachLedger ledger;
 	private MotelRoom[] rooms;
-	
+	/**
+	 * Default Constructor
+	 */
 	private RoachMotel() {
 		this.vacancy = true;
 		this.waitList = new ArrayList<Customer>();
@@ -23,7 +26,10 @@ public class RoachMotel {
 		this.maid = new Maid();
 		this.ledger = new RoachLedger();
 	}
-	
+	/**
+	 * Constructor
+	 * @param numRooms number of Room
+	 */
 	private RoachMotel(int numRooms) {
 		this.vacancy = true;
 		this.waitList = new ArrayList<Customer>();
@@ -111,7 +117,10 @@ public class RoachMotel {
     		return builder.buildVacantRoom();
     	}
     }
-    
+    /**
+     * turns ledger information to String
+     * @return
+     */
     public String ledgerToString() {
     	return ledger.toString();
     }
@@ -137,11 +146,18 @@ public class RoachMotel {
     		rooms[index].accept(this.maid);
     	}
     }
-
+    /**
+     * Checks Vacany of Room
+     * @return returns Vacancy boolean of room instance;
+     */
     public boolean isVacant() {
     	return this.vacancy;
     }
-    
+    /**
+     * Processes Payment for time spent at Motel
+     * @param pay
+     * @param amount
+     */
     public void payment(Payment pay, double amount) {
     	pay.pay(amount,ledger);
     }
@@ -161,14 +177,18 @@ public class RoachMotel {
     	}
     	this.vacancy = false;
     }
-    public void print() {
-    	System.out.println(this.toString());
-    }
+    /**
+     * returns list of rooms
+     * @param room
+     * @return
+     */
     public MotelRoom getRoom(int room)
     {
     	return rooms[room];
     }
-    //
+    /**
+     * Returns Motel information textually
+     */
     public String toString() {
     	String toRet = "";
     	toRet += "Current state of RoachMotel:\n";

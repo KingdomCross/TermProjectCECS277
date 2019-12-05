@@ -2,6 +2,8 @@ import java.util.ArrayList;
 
 /**
  * Factory class that produces and returns MotelRoom subclasses.
+ * Input: Takes in the RoachColony, the roomType, and it's amenities
+ * Output: Creates Rooms of multiple types
  * @author Alexander Dung
  *
  */

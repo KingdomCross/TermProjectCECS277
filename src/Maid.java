@@ -1,7 +1,13 @@
-import java.util.ArrayList;
-
+/**
+ * This Class Utilizes the Visitor Pattern
+ * @author ???
+ *	Input: Takes in the MotelRoom and Visits the rooms
+ *	Output: None
+ */
 public class Maid implements MotelRoomVisitor {
-
+/**
+ * Checks the room type and acts accordingly
+ */
 	@Override
 	public void visit(BaseRoom room) {
 		System.out.println("Maid is visiting " + room.getClass().getSimpleName() + " room at room number " + room.getRoomNumber()); 
@@ -19,7 +25,9 @@ public class Maid implements MotelRoomVisitor {
 		}
 		else System.out.println("\t\"Do Not Disturb\" sign was placed on the door, so maid will not enter.");
 	}
-
+/**
+ * Checks Amenities of the room instance and Acts Accordingly
+ */
 	@Override
 	public void visit(Amenity room) {
 		if(room.isDisturbable()) {
@@ -36,21 +44,5 @@ public class Maid implements MotelRoomVisitor {
 				System.out.println("\tSpa unlocked and cleaned.");
 			}
 		}
-	}
-	
-	public static void main(String[] args) {
-		RoomBuilder builder = new RoomBuilder();
-		String[] amenities = new String[4];
-		amenities[0] = "foodbar";
-		amenities[1] = "refillbar";
-		amenities[2] = "shower";
-		amenities[3] = "spa";
-		ArrayList<String> list = new ArrayList<>();
-		for(int i = 0; i < 4; i++) {
-			list.add(amenities[(int)(Math.random() * 4)]);
-		}
-		MotelRoom room = builder.buildRoom(new RoachColony(), "Suite", list, 1);
-		Maid maid = new Maid();
-		room.accept(maid);
 	}
 }

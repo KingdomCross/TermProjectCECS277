@@ -1,3 +1,9 @@
+/**
+ * Sets functionality of MotelRooms 
+ * @author ???
+ *Input:none
+ *Output: none
+ */
 public interface MotelRoom {
 	public boolean isDisturbable();
 	public void setDisturbable(boolean dist);

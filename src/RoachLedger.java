@@ -106,28 +106,4 @@ public class RoachLedger {
 		}
 	} 	
 
-	
-//	public void close() {
-//		ledger.close();
-//	}
-	
-	public static void main(String args[]) {
-		System.out.println("Creating singleton...");
-		RoachMotel rm = RoachMotel.getInstance();
-		System.out.println("Attempting checkIn()...");
-		MotelRoom temp = rm.checkIn(new RoachColony("Test",100,2), "Deluxe", new ArrayList<String>());
-		MotelRoom temp2 = rm.checkIn(new RoachColony("Test2",100,2), "Deluxe", new ArrayList<String>());
-		System.out.println(rm.checkIn(new RoachColony("Test",100,2), "deluxe", new ArrayList<String>()));
-		//System.out.println("Room:\n" + temp);
-		System.out.println("Attempting passDay()...");
-		temp.passDay();
-		temp.passDay();
-		System.out.println("Attempting checkOut()...");
-		rm.checkOut(temp, 2, new RoachPal("test","email"));
-		Scanner pause = new Scanner(System.in);
-		System.out.println(rm.ledgerToString());
-		pause.nextLine();
-		rm.checkOut(temp2, 3, new RoachPal("test2","email"));
-		System.out.println(rm.ledgerToString());
-	}
 }

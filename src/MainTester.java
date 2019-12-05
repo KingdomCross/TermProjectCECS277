@@ -91,6 +91,7 @@ public class MainTester {
 		// Party Mode without Shower
 		RC2.party();
 		System.out.println(RC1.toString());
+		R11.passDay();
 		
 		//Set doNotDisturb
 		R11.setDisturbable(true);
@@ -109,7 +110,8 @@ public class MainTester {
 		
 		checkout = Motel.checkOut(R4, 5, P);
 		System.out.println("cost: " + checkout);
-
+		
+		R11.passDay();
 		
 	}
 
