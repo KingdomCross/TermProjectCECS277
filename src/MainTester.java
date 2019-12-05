@@ -8,6 +8,8 @@ import java.util.ArrayList;
 public class MainTester {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		//Day counter
+		int days = 0;
 		// Double for checkout cost
 		Double checkout;
 		// Payment Methods
@@ -79,20 +81,25 @@ public class MainTester {
 		//WaitList Test
 		MotelRoom R11 = Motel.checkIn(RC11, "Deluxe", A11);
 		System.out.println(Motel.toString());
+		//Test for PassDay and Maid Visitors
+
+		Motel.passDay();
+		days++;
 		//Colony Check out with MasterRoach
-		checkout = Motel.checkOut(R1, 3, M);
+		checkout = Motel.checkOut(R1, days, M);
 		System.out.println("cost: " + checkout);
 		// Check in after waitList
 		R11 = Motel.checkIn(RC11, "Deluxe", A2);
 		System.out.println(Motel.toString());
-		System.out.println("Spraying Rooms");
+		System.out.println("\t.......Spraying Rooms.......");
+		System.out.println(RC1.toString());
 		RC1.party();
 		System.out.println(RC1.toString());
 		// Party Mode without Shower
+		System.out.println(RC2.toString());
 		RC2.party();
-		System.out.println(RC1.toString());
-		R11.passDay();
-		
+		System.out.println(RC2.toString());
+		Motel.passDay();
 		//Set doNotDisturb
 		R11.setDisturbable(true);
 		R2.setDisturbable(false);
@@ -104,14 +111,10 @@ public class MainTester {
 		R8.setDisturbable(false);
 		R9.setDisturbable(false);
 		R10.setDisturbable(false);
-		// Cleaning Services
-		System.out.println("\n.......Cleaning Services.......");
-		Motel.cleanRooms();
 		
-		checkout = Motel.checkOut(R4, 5, P);
+		checkout = Motel.checkOut(R4, days, P);
 		System.out.println("cost: " + checkout);
-		
-		R11.passDay();
+
 		
 	}
 

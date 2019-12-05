@@ -118,6 +118,18 @@ public class RoachMotel {
     	}
     }
     /**
+     * Simulates one day passing
+     */
+    public void passDay()
+    {
+		System.out.println("...... 1 Day Passes.....");
+    	for(MotelRoom r : rooms)
+    		r.passDay();
+
+    		
+    	this.cleanRooms();
+    }
+    /**
      * turns ledger information to String
      * @return
      */

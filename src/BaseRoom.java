@@ -11,6 +11,7 @@ public abstract class BaseRoom implements MotelRoom{
 	protected int price, roomNumber;
 	protected boolean doNotDisturb;
 	protected boolean vacancy;
+	protected int days = 0;
 	
 	public boolean isDisturbable() {
 		return this.doNotDisturb;
@@ -49,15 +50,11 @@ public abstract class BaseRoom implements MotelRoom{
 	 * simulates the Day pass and tells residence to Party
 	 */
 	public void passDay() {
-		resident.party();
+		//resident.party();
+		this.days ++;
 	}
-	/**
-	 * simulates the Day pass with the hasShower
-	 * @param boolean if shower is in room
-	 */
-//	public void passDay(boolean hasShower) {
-//		resident.party(hasShower);
-//	}
+
+
 	/**
 	 * Accepts visitor and assigns the visitor to a room
 	 */

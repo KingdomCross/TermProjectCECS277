@@ -34,15 +34,15 @@ public class RoachColony implements Customer{
      * purchased
      */
 	public void party() {
-    	this.init_pop *= (1 + this.growth);
-    	System.out.println("Colony partied and grew %" + this.growth);
+    	this.init_pop *= this.growth/100;
+    	System.out.println(this.name + " partied and grew %" + this.growth);
     	if(room.hasShower()) {
     		this.init_pop *= 0.75;
-    		System.out.println("Colony has a shower, and population therefore decreased by 25%.");
+    		System.out.println(this.name + " has a shower, and population therefore decreased by 25%.");
     	}
     	else {
     		this.init_pop *= 0.5;
-    		System.out.println("Colony does not have a shower, and population therefore decreased by 50%.");
+    		System.out.println(this.name + " does not have a shower, and population therefore decreased by 50%.");
     	}
 		
 	}
@@ -75,7 +75,7 @@ public class RoachColony implements Customer{
      */
     @Override
     public String toString() {
-    	return String.format("\n    Colony Name: %s\n    Population: %d\n    Growth Rate: %.2f%%", this.name, this.init_pop, this.growth*100);
+    	return String.format("\n    Colony Name: %s\n    Population: %d\n    Growth Rate: %.2f%%", this.name, this.init_pop, this.growth);
     }
     /**
      * getter for room
