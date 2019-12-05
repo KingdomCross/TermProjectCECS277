@@ -49,7 +49,7 @@ public class RoachColony implements Customer{
 
 	/**
      * return the name of the Colony
-     * @return
+     * @return this RoachColony's name
      */
     public String getName() {
     	return this.name;
@@ -57,7 +57,7 @@ public class RoachColony implements Customer{
     
     /**
      * returns the population of the Colony
-     * @return
+     * @return the population of the RoachColony
      */
     public int getPopulation() {
     	return this.init_pop;

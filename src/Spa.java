@@ -7,7 +7,7 @@
 public class Spa extends Amenity {
 	/**
 	 * Constructor for Spa Amenity
-	 * @param baseRoom
+	 * @param baseRoom the base room that this amenity will be added to
 	 */
 	public Spa(MotelRoom baseRoom) {
 		this.price = 20;

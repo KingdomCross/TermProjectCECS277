@@ -14,6 +14,7 @@ public class RoomBuilder {
 	 * @param colony the RoachColony checking into the MotelRoom being built
 	 * @param room the room number of the MotelRoom being built
 	 * @param amenities the list of amenities wanted with the MotelRoom being built
+	 * @param roomNumber the room number that the MotelRoom being built will have
 	 * @return a fully decorated Regular, Deluxe, or Suite based on the argument String, or a vacant Regular if the String cannot be interpreted as one of the three
 	 */
 	public MotelRoom buildRoom(RoachColony colony, String room, ArrayList<String> amenities, int roomNumber){

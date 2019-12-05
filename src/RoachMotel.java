@@ -131,7 +131,7 @@ public class RoachMotel {
     }
     /**
      * turns ledger information to String
-     * @return
+     * @return this RoachMotel's ledger as a String
      */
     public String ledgerToString() {
     	return ledger.toString();
@@ -167,8 +167,8 @@ public class RoachMotel {
     }
     /**
      * Processes Payment for time spent at Motel
-     * @param pay
-     * @param amount
+     * @param pay the payment method for the payment being processed
+     * @param amount the payment being made, in dollars
      */
     public void payment(Payment pay, double amount) {
     	pay.pay(amount,ledger);
@@ -191,8 +191,8 @@ public class RoachMotel {
     }
     /**
      * returns list of rooms
-     * @param room
-     * @return
+     * @param room room number of the MotelRoom being accessed
+     * @return the MotelRoom at the argument room number
      */
     public MotelRoom getRoom(int room)
     {
