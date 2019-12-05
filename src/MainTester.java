@@ -82,7 +82,6 @@ public class MainTester {
 		MotelRoom R11 = Motel.checkIn(RC11, "Deluxe", A11);
 		System.out.println(Motel.toString());
 		//Test for PassDay and Maid Visitors
-
 		Motel.passDay();
 		days++;
 		//Colony Check out with MasterRoach
@@ -100,6 +99,7 @@ public class MainTester {
 		RC2.party();
 		System.out.println(RC2.toString());
 		Motel.passDay();
+		days++;
 		//Set doNotDisturb
 		R11.setDisturbable(true);
 		R2.setDisturbable(false);
