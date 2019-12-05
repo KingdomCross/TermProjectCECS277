@@ -3,101 +3,103 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="0.0" y="1166.0">RoachLedger</node>
-    <node x="835.0" y="255.0">Amenity</node>
-    <node x="257.0" y="1166.0">RoomBuilder</node>
-    <node x="702.0" y="1166.0">TestRoom2</node>
-    <node x="1147.0" y="694.0">RoachColony</node>
-    <node x="1131.0" y="588.0">Spa</node>
-    <node x="0.0" y="694.0">RoachMotel</node>
-    <node x="189.0" y="577.0">Regular</node>
-    <node x="889.0" y="1166.0">maintest</node>
-    <node x="538.25" y="0.0">MotelRoom</node>
-    <node x="945.5" y="816.0">Maid</node>
-    <node x="689.0" y="861.0">RoachPal</node>
-    <node x="943.0" y="694.0">MotelRoomVisitor</node>
-    <node x="0.0" y="577.0">Suite</node>
-    <node x="176.5" y="277.5">BaseRoom</node>
-    <node x="560.75" y="694.0">Payment</node>
-    <node x="767.0" y="588.0">RefillBar</node>
-    <node x="591.0" y="588.0">Shower</node>
-    <node x="392.0" y="577.0">Deluxe</node>
-    <node x="949.0" y="588.0">FoodBar</node>
-    <node x="405.0" y="839.0">MasterRoach</node>
+    <node x="1423.0" y="910.0">RoachLedger</node>
+    <node x="851.5" y="299.0">Amenity</node>
+    <node x="0.0" y="1508.0">RoomBuilder</node>
+    <node x="954.0" y="910.0">RoachColony</node>
+    <node x="450.0" y="1508.0">TestRoom2</node>
+    <node x="968.0" y="738.0">Spa</node>
+    <node x="0.0" y="910.0">RoachMotel</node>
+    <node x="193.00000000000006" y="706.0">Regular</node>
+    <node x="640.0" y="1508.0">maintest</node>
+    <node x="548.125" y="0.0">MotelRoom</node>
+    <node x="1221.0" y="1035.0">Maid</node>
+    <node x="1220.0" y="910.0">MotelRoomVisitor</node>
+    <node x="699.0" y="1099.0">RoachPal</node>
+    <node x="0.0" y="706.0">Suite</node>
+    <node x="181.50000000000006" y="353.0">BaseRoom</node>
+    <node x="569.75" y="910.0">Payment</node>
+    <node x="786.0" y="738.0">RefillBar</node>
+    <node x="1144.0" y="716.0">Shower</node>
+    <node x="400.00000000000006" y="706.0">Deluxe</node>
+    <node x="603.0" y="738.0">FoodBar</node>
+    <node x="412.0" y="1077.0">MasterRoach</node>
   </nodes>
   <notes />
   <edges>
     <edge source="MasterRoach" target="Payment">
-      <point x="0.0" y="-92.5" />
-      <point x="537.0" y="814.0" />
-      <point x="613.0" y="814.0" />
-      <point x="-52.25" y="47.5" />
-    </edge>
-    <edge source="Maid" target="MotelRoomVisitor">
-      <point x="0.0" y="-47.0" />
-      <point x="0.0" y="36.0" />
-    </edge>
-    <edge source="Deluxe" target="BaseRoom">
-      <point x="0.0" y="-36.0" />
-      <point x="481.5" y="557.0" />
-      <point x="349.83333333333326" y="557.0" />
-      <point x="69.33333333333326" y="113.5" />
-    </edge>
-    <edge source="Suite" target="BaseRoom">
-      <point x="0.0" y="-36.0" />
-      <point x="84.5" y="557.0" />
-      <point x="211.16666666666663" y="557.0" />
-      <point x="-69.33333333333337" y="113.5" />
-    </edge>
-    <edge source="RefillBar" target="Amenity">
-      <point x="0.0" y="-25.0" />
-      <point x="848.0" y="557.0" />
-      <point x="913.0" y="557.0" />
-      <point x="-26.0" y="136.0" />
-    </edge>
-    <edge source="FoodBar" target="Amenity">
-      <point x="0.0" y="-25.0" />
-      <point x="1030.0" y="557.0" />
-      <point x="965.0" y="557.0" />
-      <point x="26.0" y="136.0" />
-    </edge>
-    <edge source="RoachPal" target="Payment">
-      <point x="0.0" y="-70.5" />
-      <point x="793.5" y="814.0" />
-      <point x="717.5" y="814.0" />
-      <point x="52.25" y="47.5" />
-    </edge>
-    <edge source="Spa" target="Amenity">
-      <point x="0.0" y="-25.0" />
-      <point x="1199.5" y="547.0" />
-      <point x="1017.0" y="547.0" />
-      <point x="78.0" y="136.0" />
-    </edge>
-    <edge source="Amenity" target="MotelRoom">
-      <point x="0.0" y="-136.0" />
-      <point x="939.0" y="230.0" />
-      <point x="694.25" y="230.0" />
-      <point x="52.0" y="102.5" />
-    </edge>
-    <edge source="BaseRoom" target="MotelRoom">
-      <point x="0.0" y="-113.5" />
-      <point x="280.5" y="230.0" />
-      <point x="590.25" y="230.0" />
-      <point x="-52.0" y="102.5" />
+      <point x="0.0" y="-122.5" />
+      <point x="545.5" y="1052.0" />
+      <point x="622.25" y="1052.0" />
+      <point x="-52.5" y="58.5" />
     </edge>
     <edge source="Shower" target="Amenity">
-      <point x="0.0" y="-25.0" />
-      <point x="669.0" y="547.0" />
-      <point x="861.0" y="547.0" />
-      <point x="-78.0" y="136.0" />
+      <point x="0.0" y="-69.5" />
+      <point x="1226.5" y="676.0" />
+      <point x="1035.25" y="676.0" />
+      <point x="78.75" y="178.5" />
     </edge>
     <edge source="Regular" target="BaseRoom">
-      <point x="0.0" y="-36.0" />
-      <point x="0.0" y="113.5" />
+      <point x="0.0" y="-79.5" />
+      <point x="0.0" y="124.5" />
+    </edge>
+    <edge source="Spa" target="Amenity">
+      <point x="0.0" y="-47.5" />
+      <point x="1046.0" y="686.0" />
+      <point x="982.75" y="686.0" />
+      <point x="26.25" y="178.5" />
+    </edge>
+    <edge source="Maid" target="MotelRoomVisitor">
+      <point x="0.0" y="-48.5" />
+      <point x="0.0" y="37.5" />
+    </edge>
+    <edge source="FoodBar" target="Amenity">
+      <point x="0.0" y="-47.5" />
+      <point x="684.5" y="676.0" />
+      <point x="877.75" y="676.0" />
+      <point x="-78.75" y="178.5" />
+    </edge>
+    <edge source="Amenity" target="MotelRoom">
+      <point x="0.0" y="-178.5" />
+      <point x="956.5" y="274.0" />
+      <point x="705.625" y="274.0" />
+      <point x="52.5" y="124.5" />
+    </edge>
+    <edge source="Deluxe" target="BaseRoom">
+      <point x="0.0" y="-79.5" />
+      <point x="491.50000000000006" y="686.0" />
+      <point x="356.50000000000006" y="686.0" />
+      <point x="70.0" y="124.5" />
+    </edge>
+    <edge source="Suite" target="BaseRoom">
+      <point x="0.0" y="-79.5" />
+      <point x="86.5" y="686.0" />
+      <point x="216.50000000000006" y="686.0" />
+      <point x="-70.0" y="124.5" />
+    </edge>
+    <edge source="BaseRoom" target="MotelRoom">
+      <point x="0.0" y="-124.5" />
+      <point x="286.50000000000006" y="274.0" />
+      <point x="600.625" y="274.0" />
+      <point x="-52.5" y="124.5" />
+    </edge>
+    <edge source="RoachPal" target="Payment">
+      <point x="0.0" y="-100.5" />
+      <point x="804.0" y="1052.0" />
+      <point x="727.25" y="1052.0" />
+      <point x="52.5" y="58.5" />
+    </edge>
+    <edge source="RefillBar" target="Amenity">
+      <point x="0.0" y="-47.5" />
+      <point x="867.0" y="686.0" />
+      <point x="930.25" y="686.0" />
+      <point x="-26.25" y="178.5" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="307.5" y="95.0" />
-  <SelectedNodes />
+  <settings layout="Hierarchic Group" zoom="0.5000000000000001" x="772.0" y="898.0" />
+  <SelectedNodes>
+    <node>RoachLedger</node>
+  </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>
