@@ -98,8 +98,6 @@ public class MainTester {
 		System.out.println(RC2.toString());
 		RC2.party();
 		System.out.println(RC2.toString());
-		Motel.passDay();
-		days++;
 		//Set doNotDisturb
 		R11.setDisturbable(true);
 		R2.setDisturbable(false);
@@ -111,6 +109,8 @@ public class MainTester {
 		R8.setDisturbable(false);
 		R9.setDisturbable(false);
 		R10.setDisturbable(false);
+		Motel.passDay();
+		days++;
 		
 		checkout = Motel.checkOut(R4, days, P);
 		System.out.println("cost: " + checkout);
