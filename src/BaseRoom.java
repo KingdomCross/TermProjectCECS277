@@ -9,18 +9,18 @@
 public abstract class BaseRoom implements MotelRoom{
 	protected RoachColony resident;
 	protected int price, roomNumber;
-	protected boolean doNotDisturb;
+	protected boolean disturbable;
 	protected boolean vacancy;
 	protected int days = 0;
 	
 	public boolean isDisturbable() {
-		return this.doNotDisturb;
+		return this.disturbable;
 	}
 	/**
 	 * sets the Do Not Disturb sign for the room
 	 */
 	public void setDisturbable(boolean dist) {
-		this.doNotDisturb = dist;
+		this.disturbable = dist;
 	}
 	/**
 	 * returns price of the room

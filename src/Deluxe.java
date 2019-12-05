@@ -15,10 +15,8 @@ public class Deluxe extends BaseRoom {
 		this.price = 75;
 		this.roomNumber = -1;
 		this.resident = new RoachColony();
-		this.doNotDisturb = false;
+		this.disturbable = false;
 		this.vacancy = true;
-		
-		//System.out.println("Vacant Deluxe Room Created");
 	}
 	/**
 	 * Constructor for Deluxe Room
@@ -29,9 +27,8 @@ public class Deluxe extends BaseRoom {
 		this.price = 50;
 		this.roomNumber = num;
 		this.resident = resi;
-		this.doNotDisturb = false;
+		this.disturbable = true;
 		this.vacancy = false;
-		//System.out.println("Deluxe Room Created");
 	}
 	/**
 	 * returns Shower boolean
