@@ -11,13 +11,12 @@ public class Deluxe extends BaseRoom {
 		System.out.println("Vacant Deluxe Room Created");
 	}
 	
-	public Deluxe(RoachColony resi, int num, ArrayList<String> amenities) {
+	public Deluxe(RoachColony resi, int num) {
 		this.price = 50;
 		this.roomNumber = num;
 		this.resident = resi;
 		this.doNotDisturb = false;
 		this.vacancy = false;
-		this.A = amenities;
 		System.out.println("Deluxe Room Created");
 	}
 }

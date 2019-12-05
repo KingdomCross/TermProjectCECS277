@@ -15,9 +15,9 @@ public class RoomBuilder {
 	 * @return a fully decorated Regular, Deluxe, or Suite based on the argument String, or a vacant Regular if the String cannot be interpreted as one of the three
 	 */
 	public MotelRoom buildRoom(RoachColony colony, String room, ArrayList<String> amenities, int roomNumber){
-		if(room.equalsIgnoreCase("regular")) return placeAmenities(amenities, new Regular(colony, roomNumber, amenities));
-		else if(room.equalsIgnoreCase("deluxe")) return placeAmenities(amenities, new Deluxe(colony, roomNumber, amenities));
-		else if(room.equalsIgnoreCase("suite")) return placeAmenities(amenities, new Suite(colony, roomNumber, amenities));
+		if(room.equalsIgnoreCase("regular")) return placeAmenities(amenities, new Regular(colony, roomNumber));
+		else if(room.equalsIgnoreCase("deluxe")) return placeAmenities(amenities, new Deluxe(colony, roomNumber));
+		else if(room.equalsIgnoreCase("suite")) return placeAmenities(amenities, new Suite(colony, roomNumber));
 		return buildVacantRoom();  
 	}
 	

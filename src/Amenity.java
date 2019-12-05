@@ -7,7 +7,7 @@
 public abstract class Amenity implements MotelRoom{
 	protected MotelRoom base;
 	protected int price;
-	private boolean hasShower;
+	protected boolean hasShower;
 	
 	public boolean isDisturbable() {
 		return this.base.isDisturbable();

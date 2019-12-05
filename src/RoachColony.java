@@ -4,9 +4,7 @@ public class RoachColony implements Customer{
 	private String name;
 	private int init_pop;
 	private double growth;
-	private MotelRoom room;
-	private boolean shower;
-	private ArrayList<String> a;
+	private BaseRoom room;
 	
 	public RoachColony() {
 		this.name = "Empty colony";
@@ -42,7 +40,7 @@ public class RoachColony implements Customer{
 	public void party() {
     	this.init_pop *= (1 + this.growth);
     	System.out.println("Colony partied and grew %" + this.growth);
-    	if(a.contains("Shower")) {
+    	if(room.hasShower) {
     		this.init_pop *= 0.75;
     		System.out.println("Colony has a shower, and population therefore decreased by 25%.");
     	}
@@ -51,15 +49,6 @@ public class RoachColony implements Customer{
     		System.out.println("Colony does not have a shower, and population therefore decreased by 50%.");
     	}
 		
-	}
-    
-    private boolean hasShower()
-    {
-    	return shower;
-    }
-    public void setShower(boolean b) {
-		// TODO Auto-generated method stub
-		shower =b;
 	}
 
 	/**
@@ -95,15 +84,8 @@ public class RoachColony implements Customer{
 		return room;
 	}
 
-	public void setRoom(MotelRoom room) {
-		this.room = room;
+
+
 	}
 
-	public void setAmenities(ArrayList<String> amenities) {
-		// TODO Auto-generated method stub
-		a = amenities;
-		
-		
-	}
 
-}

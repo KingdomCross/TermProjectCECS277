@@ -10,13 +10,12 @@ public class Suite extends BaseRoom {
 		System.out.println("Vacant Suite Created");
 	}
 	
-	public Suite(RoachColony resi, int num, ArrayList<String> amenities) {
+	public Suite(RoachColony resi, int num) {
 		this.price = 50;
 		this.roomNumber = num;
 		this.resident = resi;
 		this.doNotDisturb = false;
 		this.vacancy = false;
-		this.A = amenities;
 		System.out.println("Suite Created");
 	}
 }
