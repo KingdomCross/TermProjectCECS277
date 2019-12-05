@@ -9,4 +9,5 @@ public interface MotelRoom {
 	public void passDay(boolean hasShower);
 	public void accept(MotelRoomVisitor visitor);
 	public void hasShower(boolean b);
+	public boolean hasShower();
 }

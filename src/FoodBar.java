@@ -4,4 +4,10 @@ public class FoodBar extends Amenity {
 		this.base = baseRoom;
 	}
 
+	@Override
+	public boolean hasShower() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }
